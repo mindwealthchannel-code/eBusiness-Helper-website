@@ -3,161 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eBusiness Helper — Digital Solutions for Growth</title>
+  <title>eBusiness Helper — Premium Digital Solutions</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons (Professional Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- Background Glowing Effects -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
 
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">e<span>Business</span>Helper</a>
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn-small">Get Started</a>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
+
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
-    <div class="hero-bg"></div>
     <div class="container hero-content">
-      <p class="eyebrow">DIGITAL SOLUTIONS AGENCY</p>
-      <h1>We Grow <span>Businesses</span> Online</h1>
-      <p class="hero-sub">From e-commerce management to web design and creative marketing — we provide all-encompassing online solutions to take your brand to the next level.</p>
+      <div class="badge">
+        <span class="dot"></span> Accepting New Projects
+      </div>
+      <h1>We Build Digital <br> <span class="gradient-text">Experiences</span> That Sell.</h1>
+      <p class="hero-sub">From high-converting E-Commerce stores to stunning website designs. We are your all-in-one digital growth partner.</p>
+      
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Start a Project</a>
-        <a href="#services" class="btn btn-outline">Explore Services</a>
+        <a href="#contact" class="btn btn-primary btn-large">Start Your Project</a>
+        <a href="#services" class="btn btn-glass btn-large">Explore Services</a>
       </div>
-    </div>
-    <div class="hero-ticker">
-      <div class="ticker-track">
-        <span>E-Commerce Management</span><span>•</span>
-        <span>Website Design</span><span>•</span>
-        <span>Social Media Marketing</span><span>•</span>
-        <span>Content Creation</span><span>•</span>
-        <span>Photography & Videography</span><span>•</span>
-        <span>Graphic Design</span><span>•</span>
-        <span>E-Commerce Management</span><span>•</span>
-        <span>Website Design</span><span>•</span>
-        <span>Social Media Marketing</span><span>•</span>
-        <span>Content Creation</span><span>•</span>
-        <span>Photography & Videography</span><span>•</span>
-        <span>Graphic Design</span><span>•</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">WHAT WE DO</p>
-        <h2 class="section-title">Services That Drive Growth</h2>
-        <p class="section-subtitle">eBusiness Helper offers all-encompassing online solutions. Here's how we help you win.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon">🛒</div>
-          <h3>E-Commerce Management</h3>
-          <p>End-to-end store management — products, orders, and customer experience handled for you.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">💻</div>
-          <h3>Website Design</h3>
-          <p>Fast, responsive, and conversion-focused websites built to represent your brand.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">📈</div>
-          <h3>Social Media Marketing</h3>
-          <p>Grow your audience and engagement with data-driven social media strategies.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">✍️</div>
-          <h3>Content Creation</h3>
-          <p>Copy, blogs, and creative content that tells your story and ranks well.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">📸</div>
-          <h3>Photography & Videography</h3>
-          <p>Professional visuals that make your products and brand stand out.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">🎨</div>
-          <h3>Graphic Design</h3>
-          <p>Logos, branding, and design assets that leave a lasting impression.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH / FEATURES -->
-  <section class="approach">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">OUR APPROACH</p>
-        <h2 class="section-title">Built on Ideas That Never End</h2>
-      </div>
-      <div class="approach-grid">
-        <div class="approach-card">
-          <span class="num">01</span>
-          <h3>Future Perception</h3>
-          <p>Anticipate trends, innovate boldly. Our vision for the future informs strategic decision-making toward sustainable growth and success.</p>
-        </div>
-        <div class="approach-card">
-          <span class="num">02</span>
-          <h3>Creative Solution</h3>
-          <p>Innovative problem-solving. Our creative solutions ignite possibilities, driving impactful outcomes for your business challenges.</p>
-        </div>
-        <div class="approach-card">
-          <span class="num">03</span>
-          <h3>Never Ending Ideas</h3>
-          <p>Unlimited inspiration fuels our endless flow of innovative ideas, driving continuous growth and success, fostering positive progress.</p>
-        </div>
-        <div class="approach-card">
-          <span class="num">04</span>
-          <h3>Product Design</h3>
-          <p>Creating rich products. It incorporates creativity, functionality, and user-centricity to craft impeccable work.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container about-content">
-      <div class="about-text">
-        <p class="eyebrow">WHO WE ARE</p>
-        <h2 class="section-title">A Vibrant Team of Digital Experts</h2>
-        <p>e-Business Helper represents a vibrant team of digital experts devoted to propelling businesses into the online world forward. We focus on e-commerce management, web development, and creative marketing solutions to revolutionize the way businesses operate and engage with their audience.</p>
-        <p>We strive for excellence and innovation, giving every customer strategies tailored to their needs — along with top-notch service — as we navigate this ever-changing digital landscape.</p>
-        <ul class="about-list">
-          <li>Open communication & personalized strategies</li>
-          <li>Commitment to excellence in every project</li>
-          <li>Innovative solutions with tangible results</li>
-          <li>Long-term partnerships built on trust</li>
-        </ul>
-      </div>
-      <div class="about-stats">
-        <div class="stat">
+      <!-- Trusted By / Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
           <h3>150+</h3>
           <p>Projects Delivered</p>
         </div>
-        <div class="stat">
+        <div class="stat-item">
           <h3>98%</h3>
           <p>Client Satisfaction</p>
         </div>
-        <div class="stat">
+        <div class="stat-item">
           <h3>5+</h3>
           <p>Years Experience</p>
         </div>
@@ -165,12 +75,62 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- SERVICES (Bento Grid Style) -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Everything You Need to <span class="gradient-text">Scale</span></h2>
+        <p class="section-subtitle">We offer all-encompassing online solutions tailored to your business needs.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Large Card -->
+        <div class="bento-card large">
+          <div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>E-Commerce Management</h3>
+          <p>End-to-end store management. We handle your products, orders, and customer experience so you can focus on growing your brand.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Website Design</h3>
+          <p>Fast, responsive, and conversion-focused websites.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Social Media</h3>
+          <p>Grow your audience with data-driven strategies.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Content Creation</h3>
+          <p>Copy and blogs that tell your story and rank well.</p>
+        </div>
+
+        <!-- Large Card -->
+        <div class="bento-card large">
+          <div class="icon-box"><i class="fa-solid fa-camera-retro"></i></div>
+          <h3>Photography & Videography</h3>
+          <p>Professional visuals that make your products and brand stand out from the crowd.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
+          <h3>Graphic Design</h3>
+          <p>Logos, branding, and design assets that impress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
   <section class="cta">
-    <div class="container cta-content">
-      <h2>Have a Project For Us?</h2>
-      <p>Ready to bring your vision to life? Share your project details and let's collaborate to turn your ideas into reality.</p>
-      <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+    <div class="container cta-container">
+      <h2>Ready to dominate the digital world?</h2>
+      <p>Let's collaborate and turn your vision into reality. Get a free consultation today.</p>
+      <a href="#contact" class="btn btn-primary btn-large">Get Started Now</a>
     </div>
   </section>
 
@@ -178,26 +138,25 @@
   <section class="contact" id="contact">
     <div class="container contact-grid">
       <div class="contact-info">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2 class="section-title">Let's Build Something Great</h2>
-        <p>Got questions or want to get going? Contact us for bespoke support and expert advice. Let's help you navigate the digital landscape.</p>
-        <a href="mailto:hello@ebusinesshelper.com" class="contact-email">hello@ebusinesshelper.com</a>
+        <h2 class="section-title">Let's work <span class="gradient-text">together</span>.</h2>
+        <p>Got questions or want to get going? Contact us for bespoke support and expert advice.</p>
+        <a href="mailto:hello@ebusinesshelper.com" class="contact-email">
+          <i class="fa-solid fa-envelope"></i> hello@ebusinesshelper.com
+        </a>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
+      
+      <form class="contact-form glass-form" id="contactForm">
+        <div class="input-group">
           <input type="text" placeholder="Your Name" required />
         </div>
-        <div class="form-group">
+        <div class="input-group">
           <input type="email" placeholder="Your Email" required />
         </div>
-        <div class="form-group">
-          <input type="text" placeholder="Subject" />
+        <div class="input-group">
+          <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
         </div>
-        <div class="form-group">
-          <textarea placeholder="Tell us about your project" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-success" id="formSuccess">✅ Thanks! We'll get back to you soon.</p>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p class="form-success" id="formSuccess"><i class="fa-solid fa-check-circle"></i> Message sent successfully!</p>
       </form>
     </div>
   </section>
@@ -207,6 +166,11 @@
     <div class="container footer-content">
       <a href="#" class="logo">e<span>Business</span>Helper</a>
       <p>© 2026 eBusiness Helper. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
     </div>
   </footer>
 
