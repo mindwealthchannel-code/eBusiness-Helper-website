@@ -1,34 +1,14 @@
-// Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// Close menu on click
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('active'));
-});
-
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+function toggleCard(clickedCard) {
+  // Check karein ke kya pehle se yeh card open hai
+  const isActive = clickedCard.classList.contains('active');
+  
+  // Pehle saare cards ko band (close) kar dein
+  document.querySelectorAll('.rail-card').forEach(card => {
+    card.classList.remove('active');
   });
-});
-
-// Contact Form Submit
-const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formSuccess.classList.add('show');
-  contactForm.reset();
-  setTimeout(() => formSuccess.classList.remove('show'), 4000);
-});
+  
+  // Agar card pehle se open nahi tha, toh usay open kar dein
+  if (!isActive) {
+    clickedCard.classList.add('active');
+  }
+}
