@@ -106,9 +106,11 @@ body {
   display: flex;
   gap: 15px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* Cards ko upar align rakhega */
   z-index: 2;
   position: relative;
+  width: 100%;
+  flex-wrap: nowrap; /* Yeh sabse zaroori hai! Isse cards ek line mein rahenge */
 }
 
 /* Card Structure */
