@@ -119,6 +119,8 @@ body {
   background: rgba(59, 130, 246, 0.08);
   border-color: var(--primary);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
+  height: auto;
+  min-height: 380px;
 }
 .rail-card.active .card-content { padding: 40px 30px 30px; align-items: flex-start; }
 .rail-card.active .card-icon { color: var(--primary); font-size: 3rem; margin-bottom: 20px; }
