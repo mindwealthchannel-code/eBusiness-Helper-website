@@ -115,7 +115,7 @@ body {
 
 /* Card Structure */
 .rail-card {
-  width: 80px; /* Default chota size */
+  width: 80px; 
   height: 400px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -128,6 +128,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0; /* Yeh card ko chotay hone se rokega */
 }
 
 /* Hanger (Jo rassi se latakta hai) */
