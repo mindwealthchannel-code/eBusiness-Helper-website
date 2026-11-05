@@ -21,9 +21,10 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid fa-cube" style="color: var(--primary); font-size: 1.8rem;"></i>
-        e<span>Business</span>Helper
+      <!-- Yahan Logo laga hai -->
+      <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 40px; width: auto; object-fit: contain;">
+        <span style="color: white; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px;">e<span style="color: var(--primary);">Business</span>Helper</span>
       </a>
       
       <nav class="nav-links" id="navLinks">
@@ -128,7 +129,7 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION (Waisa hi hai) -->
+  <!-- SERVICES SECTION -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-head">
@@ -145,7 +146,7 @@
     </div>
   </section>
 
-  <!-- ABOUT & CONTACT (Waisa hi rahega) -->
+  <!-- ABOUT SECTION -->
   <section class="about" id="about">
     <div class="container">
       <div class="section-head">
@@ -167,6 +168,7 @@
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
     <div class="container contact-grid">
       <div class="contact-info">
@@ -182,27 +184,29 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
-      <a href="#" class="logo">e<span>Business</span>Helper</a>
+      <!-- Yahan bhi Logo laga hai -->
+      <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 35px; width: auto; object-fit: contain;">
+        <span style="color: white; font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px;">e<span style="color: var(--primary);">Business</span>Helper</span>
+      </a>
       <p>© 2026 eBusiness Helper.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
   
-  <!-- Naya Script Rail Cards Ke Liye -->
+  <!-- Script For Rail Cards -->
   <script>
     function toggleCard(clickedCard) {
-      // Check karein ke kya pehle se yeh card open hai
       const isActive = clickedCard.classList.contains('active');
       
-      // Pehle saare cards ko band (close) kar dein
       document.querySelectorAll('.rail-card').forEach(card => {
         card.classList.remove('active');
       });
       
-      // Agar card pehle se open nahi tha, toh usay open kar dein
       if (!isActive) {
         clickedCard.classList.add('active');
       }
