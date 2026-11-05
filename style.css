@@ -29,7 +29,6 @@ body {
   padding: 0 24px;
 }
 
-/* Background Glow */
 .glow-bg {
   position: absolute;
   width: 600px;
@@ -42,7 +41,6 @@ body {
 .glow-1 { top: -100px; left: -200px; background: var(--primary); }
 .glow-2 { top: 40%; right: -200px; background: var(--accent); }
 
-/* Typography & Buttons */
 .gradient-text {
   background: linear-gradient(to right, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -72,7 +70,6 @@ body {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
-.btn-large { padding: 16px 32px; font-size: 1.05rem; border-radius: 12px; }
 .btn-block { width: 100%; }
 
 /* Navbar */
@@ -110,15 +107,15 @@ body {
 .hamburger { display: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
 
 /* =========================================
-   HERO ORBIT SECTION (UPDATED)
+   HERO ORBIT SECTION (FIXED)
    ========================================= */
 .hero-orbit {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 120px; /* Thoda aur space diya taake text overlap na ho */
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 30px;
   position: relative;
   overflow: hidden;
 }
@@ -156,7 +153,7 @@ body {
 }
 
 .center-text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -1px;
@@ -168,41 +165,42 @@ body {
   font-size: 1.1rem;
 }
 
-/* Orbit Ka Structure (Bada kar diya hai) */
+/* Orbit Ka Size Perfect Kar Diya (450px) */
 .orbit {
   position: relative;
-  width: 650px;
-  height: 650px;
+  width: 450px; 
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-top: 30px;
+  margin-top: 40px; /* Text se thoda neeche kiya */
   animation: rotateOrbit 25s linear infinite; 
 }
 
 .orbit:hover { animation-play-state: paused; }
 
+/* Center Logo (Amazon) */
 .orbit-center {
-  width: 90px;
-  height: 90px;
+  width: 100px; /* Center logo ko bada kiya */
+  height: 100px;
   background: var(--card-bg);
   border: 2px solid var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  color: var(--primary);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  font-size: 3.5rem; /* Icon ka size bada kiya */
+  color: var(--text);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
   animation: rotateOrbitReverse 25s linear infinite; 
 }
 
 /* Gol Boats (Icons) */
 .boat {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 70px; /* Icons ka size thoda chota kiya taake fit aaye */
+  height: 70px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 50%;
@@ -215,8 +213,8 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.3s;
   
-  /* Icons ka daira bada kar diya (325px) */
-  transform: rotate(calc(360deg / 6 * var(--i))) translate(325px) rotate(calc(-360deg / 6 * var(--i)));
+  /* Radius 225px kar diya taake 450px wale dairay mein fit ho */
+  transform: rotate(calc(360deg / 6 * var(--i))) translate(225px) rotate(calc(-360deg / 6 * var(--i)));
 }
 
 .orbit:hover .boat { animation: rotateOrbitReverse 25s linear infinite; }
@@ -226,15 +224,15 @@ body {
   color: #fff;
   border-color: var(--primary);
   box-shadow: 0 0 25px var(--primary);
-  transform: rotate(calc(360deg / 6 * var(--i))) translate(325px) rotate(calc(-360deg / 6 * var(--i))) scale(1.2) !important;
+  transform: rotate(calc(360deg / 6 * var(--i))) translate(225px) rotate(calc(-360deg / 6 * var(--i))) scale(1.2) !important;
 }
 
 /* Details Box */
 .service-details {
-  margin-top: 60px; /* Icons se door kiya */
+  margin-top: 40px;
   max-width: 600px;
   text-align: center;
-  padding: 30px 40px;
+  padding: 25px 35px;
   border-radius: 20px;
   transition: all 0.3s ease;
   z-index: 10;
@@ -246,7 +244,7 @@ body {
   backdrop-filter: blur(15px);
 }
 
-.service-details h3 { color: var(--primary); font-size: 1.6rem; margin-bottom: 10px; }
+.service-details h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 10px; }
 .service-details p { color: var(--text-muted); font-size: 1.05rem; }
 
 @keyframes rotateOrbit {
@@ -267,7 +265,6 @@ section { padding: 100px 0; }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
 .section-subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
-/* Bento Grid */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -301,7 +298,6 @@ section { padding: 100px 0; }
 .bento-card h3 { font-size: 1.4rem; margin-bottom: 12px; font-weight: 600; }
 .bento-card p { color: var(--text-muted); font-size: 1rem; flex-grow: 1; }
 
-/* About Section */
 .about-content {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -319,7 +315,6 @@ section { padding: 100px 0; }
 .stat h3 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
 .stat p { color: var(--text-muted); font-weight: 500; }
 
-/* Contact Section */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .contact-info .section-title { text-align: left; }
 .contact-info p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
@@ -343,7 +338,6 @@ section { padding: 100px 0; }
 .form-success { display: none; margin-top: 16px; color: var(--accent); font-weight: 500; text-align: center; }
 .form-success.show { display: block; }
 
-/* Footer */
 .footer { border-top: 1px solid var(--card-border); padding: 40px 0; margin-top: 60px; }
 .footer-content { display: flex; justify-content: space-between; align-items: center; }
 .footer p { color: var(--text-muted); }
@@ -372,19 +366,15 @@ section { padding: 100px 0; }
   .bento-grid { grid-template-columns: 1fr; }
   
   /* Mobile Orbit */
-  .hero-orbit { padding-top: 100px; }
-  .orbit { width: 320px; height: 320px; margin-top: 40px; }
-  .orbit-center { width: 70px; height: 70px; font-size: 1.8rem; }
+  .orbit { width: 300px; height: 300px; margin-top: 30px; }
+  .orbit-center { width: 80px; height: 80px; font-size: 2.5rem; }
   .boat {
-    width: 60px; height: 60px; font-size: 1.3rem;
-    transform: rotate(calc(360deg / 6 * var(--i))) translate(160px) rotate(calc(-360deg / 6 * var(--i)));
+    width: 55px; height: 55px; font-size: 1.4rem;
+    transform: rotate(calc(360deg / 6 * var(--i))) translate(150px) rotate(calc(-360deg / 6 * var(--i)));
   }
   .boat:hover {
-    transform: rotate(calc(360deg / 6 * var(--i))) translate(160px) rotate(calc(-360deg / 6 * var(--i))) scale(1.1) !important;
+    transform: rotate(calc(360deg / 6 * var(--i))) translate(150px) rotate(calc(-360deg / 6 * var(--i))) scale(1.1) !important;
   }
-  .service-details {
-    margin-top: 40px;
-    padding: 20px;
-  }
+  .service-details { margin-top: 30px; padding: 20px; }
   .footer-content { flex-direction: column; gap: 20px; text-align: center; }
 }
