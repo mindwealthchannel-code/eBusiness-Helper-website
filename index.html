@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <link rel="stylesheet" href="style.css" />
@@ -43,98 +42,110 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-orbit" id="home">
-    <div class="container orbit-container">
+  <!-- NAYA HERO SECTION (The Rail Design) -->
+  <section class="hero-rail" id="home">
+    <div class="container">
       
-      <div class="center-text">
-        <div class="badge">
-          <span class="dot"></span> Accepting New Projects
-        </div>
-        <h1>We Build Digital <br> <span class="gradient-text">Experiences</span></h1>
-        <p>Click on any rotating service to explore</p>
+      <div class="rail-heading text-center">
+        <h1>Layers of <span class="gradient-text">Digital Success</span></h1>
+        <p>Click on any service to open and explore.</p>
       </div>
 
-      <!-- Rotating Orbit (Icons Updated) -->
-      <div class="orbit">
-        <!-- Amazon Icon (Center) -->
-        <div class="orbit-center">
-          <i class="fa-brands fa-amazon"></i>
-        </div>
+      <!-- The Rail (Rassi) -->
+      <div class="rail-container">
+        <div class="rail-line"></div>
 
-        <!-- Rotating Brands & Services -->
-        <div class="boat" style="--i:1" onclick="showService('ecommerce')">
-          <i class="fa-brands fa-shopify"></i>
-        </div>
-        <div class="boat" style="--i:2" onclick="showService('web')">
-          <i class="fa-brands fa-ebay"></i>
-        </div>
-        <div class="boat" style="--i:3" onclick="showService('social')">
-          <i class="fa-solid fa-bullhorn"></i>
-        </div>
-        <div class="boat" style="--i:4" onclick="showService('content')">
-          <i class="fa-solid fa-pen-nib"></i>
-        </div>
-        <div class="boat" style="--i:5" onclick="showService('photo')">
-          <i class="fa-solid fa-camera-retro"></i>
-        </div>
-        <div class="boat" style="--i:6" onclick="showService('design')">
-          <i class="fa-solid fa-palette"></i>
+        <!-- Cards Wrapper -->
+        <div class="rail-cards-wrapper">
+          
+          <!-- Card 1 (Initially Open) -->
+          <div class="rail-card active" onclick="toggleCard(this)">
+            <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
+            <div class="card-content">
+              <div class="card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <h3 class="card-title">E-Commerce</h3>
+              <div class="card-details">
+                <p>End-to-end store management. We handle products, orders, and customer experience to grow your brand.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rail-card" onclick="toggleCard(this)">
+            <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
+            <div class="card-content">
+              <div class="card-icon"><i class="fa-brands fa-shopify"></i></div>
+              <h3 class="card-title">Shopify Setup</h3>
+              <div class="card-details">
+                <p>Complete Shopify store setup, theme customization, and product uploading.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="rail-card" onclick="toggleCard(this)">
+            <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
+            <div class="card-content">
+              <div class="card-icon"><i class="fa-brands fa-amazon"></i></div>
+              <h3 class="card-title">Amazon FBA</h3>
+              <div class="card-details">
+                <p>Amazon store management, product hunting, and listing optimization.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="rail-card" onclick="toggleCard(this)">
+            <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
+            <div class="card-content">
+              <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <h3 class="card-title">Web Design</h3>
+              <div class="card-details">
+                <p>Fast, responsive, and conversion-focused custom websites.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="rail-card" onclick="toggleCard(this)">
+            <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
+            <div class="card-content">
+              <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <h3 class="card-title">Marketing</h3>
+              <div class="card-details">
+                <p>Data-driven Social Media and PPC marketing strategies.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <div class="service-details glass-panel" id="serviceDetails">
-        <h3 id="detailTitle">Select a Service</h3>
-        <p id="detailDesc">Click on the rotating icons above to see the magic.</p>
+      
+      <div class="rail-footer text-center">
+        <p><i class="fa-solid fa-arrow-pointer"></i> Click on the cards to open them</p>
       </div>
 
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES SECTION (Waisa hi hai) -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Everything You Need to <span class="gradient-text">Scale</span></h2>
-        <p class="section-subtitle">We offer all-encompassing online solutions tailored to your business needs.</p>
       </div>
-
       <div class="bento-grid">
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
-          <h3>E-Commerce Management</h3>
-          <p>End-to-end store management. We handle your products, orders, and customer experience so you can focus on growing your brand.</p>
-        </div>
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3>Website Design</h3>
-          <p>Fast, responsive, and conversion-focused websites.</p>
-        </div>
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
-          <h3>Social Media</h3>
-          <p>Grow your audience with data-driven strategies.</p>
-        </div>
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-pen-nib"></i></div>
-          <h3>Content Creation</h3>
-          <p>Copy and blogs that tell your story and rank well.</p>
-        </div>
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-camera-retro"></i></div>
-          <h3>Photography & Videography</h3>
-          <p>Professional visuals that make your products and brand stand out.</p>
-        </div>
-        <div class="bento-card">
-          <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
-          <h3>Graphic Design</h3>
-          <p>Logos, branding, and design assets that impress.</p>
-        </div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-Commerce</h3><p>End-to-end store management.</p></div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-brands fa-shopify"></i></div><h3>Shopify</h3><p>Store setup and management.</p></div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-brands fa-amazon"></i></div><h3>Amazon</h3><p>FBA and listing optimization.</p></div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div><h3>Web Design</h3><p>Fast and responsive websites.</p></div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div><h3>Marketing</h3><p>Social media and PPC ads.</p></div>
+        <div class="bento-card"><div class="icon-box"><i class="fa-solid fa-palette"></i></div><h3>Graphic Design</h3><p>Logos and brand identity.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT & CONTACT (Waisa hi rahega) -->
   <section class="about" id="about">
     <div class="container">
       <div class="section-head">
@@ -142,101 +153,59 @@
       </div>
       <div class="about-content">
         <div class="about-text glass-panel">
-          <p>e-Business Helper represents a vibrant team of digital experts devoted to propelling businesses into the online world forward. We focus on e-commerce management, web development, and creative marketing solutions to revolutionize the way businesses operate and engage with their audience.</p>
-          <p>We strive for excellence and innovation, giving every customer strategies tailored to their needs — along with top-notch service — as we navigate this ever-changing digital landscape.</p>
+          <p>e-Business Helper represents a vibrant team of digital experts devoted to propelling businesses into the online world forward. We focus on e-commerce management, web development, and creative marketing solutions.</p>
           <ul class="about-list">
             <li><i class="fa-solid fa-check-circle"></i> Open communication & personalized strategies</li>
             <li><i class="fa-solid fa-check-circle"></i> Commitment to excellence in every project</li>
-            <li><i class="fa-solid fa-check-circle"></i> Innovative solutions with tangible results</li>
           </ul>
         </div>
         <div class="about-stats">
-          <div class="stat glass-panel">
-            <h3>150+</h3>
-            <p>Projects Delivered</p>
-          </div>
-          <div class="stat glass-panel">
-            <h3>98%</h3>
-            <p>Client Satisfaction</p>
-          </div>
-          <div class="stat glass-panel">
-            <h3>5+</h3>
-            <p>Years Experience</p>
-          </div>
+          <div class="stat glass-panel"><h3>150+</h3><p>Projects Delivered</p></div>
+          <div class="stat glass-panel"><h3>98%</h3><p>Client Satisfaction</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
     <div class="container contact-grid">
       <div class="contact-info">
         <h2 class="section-title">Let's work <span class="gradient-text">together</span>.</h2>
-        <p>Got questions or want to get going? Contact us for bespoke support and expert advice.</p>
-        <a href="mailto:hello@ebusinesshelper.com" class="contact-email">
-          <i class="fa-solid fa-envelope"></i> hello@ebusinesshelper.com
-        </a>
+        <a href="mailto:hello@ebusinesshelper.com" class="contact-email"><i class="fa-solid fa-envelope"></i> hello@ebusinesshelper.com</a>
       </div>
-      
       <form class="contact-form glass-form" id="contactForm">
-        <div class="input-group">
-          <input type="text" placeholder="Your Name" required />
-        </div>
-        <div class="input-group">
-          <input type="email" placeholder="Your Email" required />
-        </div>
-        <div class="input-group">
-          <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
-        </div>
+        <div class="input-group"><input type="text" placeholder="Your Name" required /></div>
+        <div class="input-group"><input type="email" placeholder="Your Email" required /></div>
+        <div class="input-group"><textarea placeholder="Your Message" rows="4" required></textarea></div>
         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-        <p class="form-success" id="formSuccess"><i class="fa-solid fa-check-circle"></i> Message sent successfully!</p>
       </form>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
-      <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid fa-cube" style="color: var(--primary); font-size: 1.5rem;"></i>
-        e<span>Business</span>Helper
-      </a>
-      <p>© 2026 eBusiness Helper. All rights reserved.</p>
-      <div class="socials">
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      </div>
+      <a href="#" class="logo">e<span>Business</span>Helper</a>
+      <p>© 2026 eBusiness Helper.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
   
+  <!-- Naya Script Rail Cards Ke Liye -->
   <script>
-    const serviceData = {
-      ecommerce: { title: "E-Commerce Management", desc: "End-to-end store management. We handle your products, orders, and customer experience so you can focus on growing your brand." },
-      web: { title: "Website Design", desc: "Fast, responsive, and conversion-focused websites built to represent your brand perfectly." },
-      social: { title: "Social Media Marketing", desc: "Grow your audience and engagement with data-driven social media strategies." },
-      content: { title: "Content Creation", desc: "Copy, blogs, and creative content that tells your story and ranks well on Google." },
-      photo: { title: "Photography & Videography", desc: "Professional visuals that make your products and brand stand out from the crowd." },
-      design: { title: "Graphic Design", desc: "Logos, branding, and design assets that leave a lasting impression on your customers." }
-    };
-
-    function showService(id) {
-      const details = document.getElementById('serviceDetails');
-      const title = document.getElementById('detailTitle');
-      const desc = document.getElementById('detailDesc');
-
-      details.style.opacity = 0;
-      details.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        title.innerText = serviceData[id].title;
-        desc.innerText = serviceData[id].desc;
-        details.style.opacity = 1;
-        details.style.transform = 'translateY(0)';
-      }, 200);
+    function toggleCard(clickedCard) {
+      // Check karein ke kya pehle se yeh card open hai
+      const isActive = clickedCard.classList.contains('active');
+      
+      // Pehle saare cards ko band (close) kar dein
+      document.querySelectorAll('.rail-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      // Agar card pehle se open nahi tha, toh usay open kar dein
+      if (!isActive) {
+        clickedCard.classList.add('active');
+      }
     }
   </script>
 </body>
