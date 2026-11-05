@@ -26,7 +26,6 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .text-center { text-align: center; }
 
-/* Glow */
 .glow-bg {
   position: absolute; width: 600px; height: 600px; border-radius: 50%;
   filter: blur(120px); z-index: -1; opacity: 0.15;
@@ -40,16 +39,14 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Navbar & Buttons (Same as before) */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: 0.3s; }
 .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
 .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
 .btn-block { width: 100%; }
 
-.navbar { position: fixed; top: 0; left: 0; right: 0; padding: 20px 0; z-index: 100; background: rgba(5, 9, 20, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--text); text-decoration: none; }
-.logo span { color: var(--primary); }
+.navbar { position: fixed; top: 0; left: 0; right: 0; padding: 10px 0; z-index: 100; background: rgba(5, 9, 20, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; min-height: 70px; }
+.logo { text-decoration: none; }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
 .nav-links a:hover { color: var(--text); }
@@ -57,63 +54,37 @@ body {
 .hamburger { display: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
 
 /* =========================================
-   NAYA HERO RAIL SECTION (Video Jaisa)
+   HERO RAIL SECTION (FIXED)
    ========================================= */
 .hero-rail {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 120px;
+  padding-top: 140px;
+  padding-bottom: 50px;
   position: relative;
-  overflow: hidden;
 }
 
-.rail-heading h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-}
-.rail-heading p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-}
+.rail-heading h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+.rail-heading p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 50px; }
 
-/* Rail Design */
-.rail-container {
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  padding: 20px 0;
-}
+.rail-container { position: relative; width: 100%; margin-top: 20px; padding: 20px 0; }
 
-/* Rassi (The Line) */
-.rail-line {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  z-index: 1;
-}
+.rail-line { position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: rgba(255, 255, 255, 0.2); box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); z-index: 1; }
 
 .rail-cards-wrapper {
   display: flex;
   gap: 15px;
   justify-content: center;
-  align-items: flex-start; /* Cards ko upar align rakhega */
+  align-items: flex-start;
   z-index: 2;
   position: relative;
   width: 100%;
-  flex-wrap: nowrap; /* Yeh sabse zaroori hai! Isse cards ek line mein rahenge */
+  flex-wrap: nowrap; /* Sab cards ek line mein rahenge */
 }
 
-/* Card Structure */
+/* Card Design */
 .rail-card {
   width: 80px; 
   height: 400px;
@@ -128,120 +99,38 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0; /* Yeh card ko chotay hone se rokega */
+  flex-shrink: 0;
 }
 
-/* Hanger (Jo rassi se latakta hai) */
-.hanger {
-  position: absolute;
-  top: -25px;
-  width: 100%;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 1.2rem;
-}
+.hanger { position: absolute; top: -25px; width: 100%; text-align: center; color: var(--text-muted); font-size: 1.2rem; }
 
-/* Card Content */
-.card-content {
-  width: 100%;
-  height: 100%;
-  padding: 40px 15px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.5s;
-}
+.card-content { width: 100%; height: 100%; padding: 40px 15px 20px; display: flex; flex-direction: column; align-items: center; transition: all 0.5s; }
+.card-icon { font-size: 2rem; color: var(--text-muted); margin-bottom: auto; transition: all 0.5s; }
+.card-title { font-size: 1.1rem; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; transition: all 0.5s; color: var(--text-muted); margin-bottom: 20px; }
+.card-details { opacity: 0; max-height: 0; overflow: hidden; transition: all 0.5s; text-align: left; width: 100%; margin-top: 20px; }
+.card-details p { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
 
-.card-icon {
-  font-size: 2rem;
-  color: var(--text-muted);
-  margin-bottom: auto; /* Icon ko upar rakhega */
-  transition: all 0.5s;
-}
+/* Jab Mouse Le Jayein */
+.rail-card:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(59, 130, 246, 0.4); transform: translateY(-5px); }
 
-.card-title {
-  font-size: 1.1rem;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  white-space: nowrap;
-  transition: all 0.5s;
-  color: var(--text-muted);
-}
-
-.card-details {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s;
-  text-align: left;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.card-details p {
-  color: var(--text);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* HOVER EFFECT */
-.rail-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(59, 130, 246, 0.4);
-  transform: translateY(-5px);
-}
-
-/* ACTIVE EFFECT (Jab click karein) */
+/* Jab Card Open Ho */
 .rail-card.active {
-  width: 350px; /* Khul kar bada ho jayega */
+  width: 350px;
   background: rgba(59, 130, 246, 0.08);
   border-color: var(--primary);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
 }
-
-.rail-card.active .card-content {
-  padding: 40px 30px 30px;
-  align-items: flex-start;
-}
-
-.rail-card.active .card-icon {
-  color: var(--primary);
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.rail-card.active .card-title {
-  writing-mode: horizontal-tb;
-  transform: rotate(0deg);
-  font-size: 1.8rem;
-  color: var(--text);
-  font-weight: 700;
-}
-
-.rail-card.active .card-details {
-  opacity: 1;
-  max-height: 200px;
-}
-
-.rail-footer {
-  margin-top: 50px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
+.rail-card.active .card-content { padding: 40px 30px 30px; align-items: flex-start; }
+.rail-card.active .card-icon { color: var(--primary); font-size: 3rem; margin-bottom: 20px; }
+.rail-card.active .card-title { writing-mode: horizontal-tb; transform: rotate(0deg); font-size: 1.8rem; color: var(--text); font-weight: 700; margin-bottom: 12px; }
+.rail-card.active .card-details { opacity: 1; max-height: 200px; }
 
 /* =========================================
    OTHER SECTIONS
    ========================================= */
-section { padding: 100px 0; }
-.section-head { text-align: center; margin-bottom: 60px; }
+section { padding: 80px 0; }
+.section-head { text-align: center; margin-bottom: 50px; }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
-
-.bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.bento-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px 30px; border-radius: 24px; transition: 0.3s; }
-.bento-card:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.5); }
-.icon-box { width: 60px; height: 60px; border-radius: 16px; background: rgba(59, 130, 246, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 24px; }
-.bento-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
-.bento-card p { color: var(--text-muted); }
 
 .about-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
 .about-text { padding: 40px; border-radius: 24px; }
@@ -261,150 +150,30 @@ section { padding: 100px 0; }
 .input-group input:focus, .input-group textarea:focus { outline: none; border-color: var(--primary); }
 
 .glass-panel { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(15px); }
-
 .footer { border-top: 1px solid var(--card-border); padding: 40px 0; text-align: center; color: var(--text-muted); }
 
-/* Responsive */
+/* =========================================
+   MOBILE RESPONSIVE (FIXED)
+   ========================================= */
 @media (max-width: 992px) {
-@media (max-width: 992px) {
-  .bento-grid, .about-content, .contact-grid { 
-    grid-template-columns: 1fr; 
-  }
+  .about-content, .contact-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .rail-line { display: none; } 
+  .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; padding: 20px; gap: 20px; border-bottom: 1px solid var(--card-border); display: none; }
+  .nav-links.active { display: flex; }
+  .nav-right .btn { display: none; }
+  .hamburger { display: block; }
   
-  .rail-cards-wrapper {
-    flex-direction: column; 
-    align-items: center;
-  }
-
-  .rail-card {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    min-height: 80px;
-    padding: 20px;
-    flex-direction: row; 
-    justify-content: center;
-  }
-
+  /* Mobile Par Cards Ek Ke Neeche Ek */
+  .rail-line { display: none; }
+  .rail-cards-wrapper { flex-direction: column; align-items: center; gap: 20px; }
+  .rail-card { width: 100%; max-width: 350px; height: auto; min-height: 80px; padding: 20px; flex-direction: row; justify-content: center; }
   .hanger { display: none; }
-
-  .card-content {
-    padding: 0;
-    align-items: center;
-  }
-
-  .card-title {
-    writing-mode: horizontal-tb; 
-    transform: none; 
-    font-size: 1.2rem;
-  }
-
+  .card-content { padding: 0; align-items: center; }
+  .card-title { writing-mode: horizontal-tb; transform: none; font-size: 1.2rem; margin: 0; }
   .card-details { display: none; }
-
-  .rail-card.active {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    padding: 30px;
-  }
-
-  .rail-card.active .card-content {
-    align-items: flex-start;
-  }
-
-  .rail-card.active .card-details {
-    display: block; 
-    margin-top: 15px;
-  }
-}
-/* =========================================
-   NAYA SERVICE PAGE DESIGN
-   ========================================= */
-.page-header {
-  padding-top: 180px;
-  padding-bottom: 60px;
-  text-align: center;
-}
-
-.page-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 15px;
-}
-
-.page-subtitle {
-  color: var(--text-muted);
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.text-content {
-  padding: 40px;
-  border-radius: 24px;
-}
-
-.text-content h2 {
-  color: var(--primary);
-  font-size: 1.6rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-.text-content h2:first-child { margin-top: 0; }
-
-.text-content p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 15px;
-  line-height: 1.7;
-}
-
-.platform-box {
-  padding: 30px;
-  border-radius: 24px;
-  margin-bottom: 30px;
-}
-
-.platform-box h3 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--card-border);
-  padding-bottom: 10px;
-}
-
-.platform-list {
-  list-style: none;
-}
-
-.platform-list li {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.05rem;
-  margin-bottom: 15px;
-  color: var(--text-muted);
-}
-
-.platform-list i {
-  font-size: 1.5rem;
-  color: var(--primary);
-  width: 25px;
-  text-align: center;
-}
-
-@media (max-width: 992px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
+  .rail-card.active { width: 100%; max-width: 350px; height: auto; padding: 30px; }
+  .rail-card.active .card-content { align-items: flex-start; }
+  .rail-card.active .card-details { display: block; margin-top: 15px; }
 }
