@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eBusiness Helper — Premium Digital Solutions</title>
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -13,12 +12,10 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Background Glowing Effects -->
   <div class="glow-bg glow-1"></div>
   <div class="glow-bg glow-2"></div>
 
@@ -46,11 +43,10 @@
     </div>
   </header>
 
-  <!-- HERO SECTION (Rotating Orbit) -->
+  <!-- HERO SECTION -->
   <section class="hero-orbit" id="home">
     <div class="container orbit-container">
       
-      <!-- Center Text -->
       <div class="center-text">
         <div class="badge">
           <span class="dot"></span> Accepting New Projects
@@ -59,13 +55,19 @@
         <p>Click on any rotating service to explore</p>
       </div>
 
-      <!-- Rotating Orbit -->
+      <!-- Rotating Orbit (Icons Updated) -->
       <div class="orbit">
+        <!-- Amazon Icon (Center) -->
+        <div class="orbit-center">
+          <i class="fa-brands fa-amazon"></i>
+        </div>
+
+        <!-- Rotating Brands & Services -->
         <div class="boat" style="--i:1" onclick="showService('ecommerce')">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-brands fa-shopify"></i>
         </div>
         <div class="boat" style="--i:2" onclick="showService('web')">
-          <i class="fa-solid fa-laptop-code"></i>
+          <i class="fa-brands fa-ebay"></i>
         </div>
         <div class="boat" style="--i:3" onclick="showService('social')">
           <i class="fa-solid fa-bullhorn"></i>
@@ -79,14 +81,8 @@
         <div class="boat" style="--i:6" onclick="showService('design')">
           <i class="fa-solid fa-palette"></i>
         </div>
-        
-        <!-- Center Logo -->
-        <div class="orbit-center">
-          <i class="fa-solid fa-cube"></i>
-        </div>
       </div>
 
-      <!-- Details Box -->
       <div class="service-details glass-panel" id="serviceDetails">
         <h3 id="detailTitle">Select a Service</h3>
         <p id="detailDesc">Click on the rotating icons above to see the magic.</p>
@@ -95,7 +91,7 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION (Bento Grid) -->
+  <!-- SERVICES SECTION -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-head">
@@ -217,7 +213,6 @@
 
   <script src="script.js"></script>
   
-  <!-- Orbit Specific Script -->
   <script>
     const serviceData = {
       ecommerce: { title: "E-Commerce Management", desc: "End-to-end store management. We handle your products, orders, and customer experience so you can focus on growing your brand." },
