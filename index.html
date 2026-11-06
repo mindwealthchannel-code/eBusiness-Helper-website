@@ -35,7 +35,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION (Sab Cards Ek Line Mein) -->
+  <!-- HERO SECTION (Rail Cards) -->
   <section class="hero-rail" id="home">
     <div class="container">
       
@@ -62,7 +62,7 @@
             </div>
           </div>
 
-           <!-- 2. Shopify -->
+          <!-- 2. Shopify -->
           <div class="rail-card" onclick="toggleCard(this)">
             <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
             <div class="card-content">
@@ -70,7 +70,6 @@
               <h3 class="card-title">Shopify</h3>
               <div class="card-details">
                 <p>Complete Shopify store setup, theme customization, and product uploading.</p>
-                <!-- YEH BUTTON ADD KAREIN -->
                 <a href="shopify.html" class="btn btn-primary" style="margin-top: 15px; padding: 8px 16px; font-size: 0.9rem;">Read More</a>
               </div>
             </div>
@@ -84,13 +83,12 @@
               <h3 class="card-title">Amazon FBA/FBM</h3>
               <div class="card-details">
                 <p>Amazon store management, product hunting, and listing optimization.</p>
-                <!-- YEH BUTTON ADD KAREIN -->
                 <a href="amazon.html" class="btn btn-primary" style="margin-top: 15px; padding: 8px 16px; font-size: 0.9rem;">Read More</a>
               </div>
             </div>
           </div>
 
-           <!-- 4. Web Design -->
+          <!-- 4. Web Design -->
           <div class="rail-card" onclick="toggleCard(this)">
             <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
             <div class="card-content">
@@ -98,13 +96,12 @@
               <h3 class="card-title">Web Design</h3>
               <div class="card-details">
                 <p>Fast, responsive, and conversion-focused custom websites.</p>
-                <!-- YEH BUTTON ADD KAREIN -->
                 <a href="web-design.html" class="btn btn-primary" style="margin-top: 15px; padding: 8px 16px; font-size: 0.9rem;">Read More</a>
               </div>
             </div>
           </div>
 
-                    <!-- 5. Marketing -->
+          <!-- 5. Marketing -->
           <div class="rail-card" onclick="toggleCard(this)">
             <div class="hanger"><i class="fa-solid fa-grip-lines-vertical"></i></div>
             <div class="card-content">
@@ -112,14 +109,18 @@
               <h3 class="card-title">Marketing</h3>
               <div class="card-details">
                 <p>Data-driven Social Media and PPC marketing strategies.</p>
-                <!-- YEH BUTTON ADD KAREIN -->
                 <a href="marketing.html" class="btn btn-primary" style="margin-top: 15px; padding: 8px 16px; font-size: 0.9rem;">Read More</a>
               </div>
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT SECTION -->
-  <section class="about" id="about" style="padding-top: 50px;">
+  <section class="about" id="about">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Why Choose <span class="gradient-text">eBusiness Helper?</span></h2>
@@ -167,5 +168,26 @@
   </footer>
 
   <script src="script.js"></script>
+  
+  <!-- JavaScript for Rail Cards & Menu -->
+  <script>
+    function toggleCard(clickedCard) {
+      const isActive = clickedCard.classList.contains('active');
+      document.querySelectorAll('.rail-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      if (!isActive) {
+        clickedCard.classList.add('active');
+      }
+    }
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
 </body>
 </html>
