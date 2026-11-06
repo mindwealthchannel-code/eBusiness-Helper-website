@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Design & Development — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">High-Converting <span class="gradient-text">Web Design</span></h1>
+      <p class="page-subtitle">We don't just build websites; we build digital storefronts that turn visitors into loyal customers.</p>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL INTRO TEXT -->
+  <section class="calc-intro-text" style="padding: 40px 0 10px;">
+    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
+      
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
+        Your website is your <span class="gradient-text">24/7 Salesperson.</span>
+      </h2>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+        In today's digital age, a slow, outdated, or poorly designed website can cost you thousands of dollars in lost sales. Your online store represents your brand's credibility. If it doesn't look premium and load within seconds, customers will bounce.
+      </p>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+        <strong>Whether you need a simple landing page or a complex e-commerce store,</strong> we design with a purpose—to convert. We focus on clean UI/UX, fast loading speeds, and mobile responsiveness so you never lose a client due to technical issues.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ⚡ WEBSITE COST ESTIMATOR (Calculator) -->
+  <section class="calculator-section" style="padding: 40px 0 60px;">
+    <div class="container">
+      <div class="calculator-box glass-panel" style="max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 24px;">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Website Cost Estimator</h2>
+          <p style="color: var(--text-muted);">Get a rough estimate for your project instantly.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 20px; text-align: left; margin-bottom: 30px;">
+          
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">What type of website do you need?</label>
+            <select id="webType" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="500">Basic Landing Page ($500+)</option>
+              <option value="1200">Business Website ($1,200+)</option>
+              <option value="2500">E-Commerce Store ($2,500+)</option>
+              <option value="4000">Custom Web App ($4,000+)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Do you need Content Writing?</label>
+            <select id="webContent" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="0">No, I have my own content</option>
+              <option value="300">Yes, basic copywriting (+$300)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Do you need Logo & Branding?</label>
+            <select id="webBrand" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="0">No, I have a logo</option>
+              <option value="200">Yes, I need a logo (+$200)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="calc-result" style="text-align: center; background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid var(--primary);">
+          <h3 style="color: white; font-size: 1.1rem; margin-bottom: 5px;">Estimated Starting Cost:</h3>
+          <span id="webCostDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">$500.00</span>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 10px;">*This is a rough estimate. Contact us for an exact quote.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px;">Get Exact Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
+    <div class="container content-grid">
+      
+      <div class="text-content">
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Why Your Web Design Matters</h2>
+        <p>Your website is often the first interaction a customer has with your brand. A professionally designed website builds trust instantly, while a poorly designed one drives potential customers straight to your competitors. We craft websites that look beautiful and function flawlessly.</p>
+        
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Web Design Strategy" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our Development Process</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+          <li><strong>Discovery & Strategy:</strong> We learn about your business and goals.</li>
+          <li><strong>UI/UX Design:</strong> We create wireframes and stunning visuals.</li>
+          <li><strong>Development:</strong> We code it using the latest, fastest technologies.</li>
+          <li><strong>Testing & Launch:</strong> We test on all devices before going live.</li>
+        </ul>
+
+        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop" alt="UI UX Design" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Mobile-First & SEO Optimized</h2>
+        <p>Over 60% of web traffic comes from mobile phones. We design every website with a "Mobile-First" approach, ensuring it looks and works perfectly on smartphones. Plus, we build with clean code so Google loves your site as much as your customers do.</p>
+
+        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop" alt="Mobile Responsive Design" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Technologies We Use</h3>
+          <ul class="platform-list" style="list-style: none; padding: 0;">
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-wordpress" style="color: var(--primary); font-size: 1.5rem;"></i> WordPress & WooCommerce</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Shopify</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-react" style="color: var(--primary); font-size: 1.5rem;"></i> React / Next.js</li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-brands fa-html5" style="color: var(--primary); font-size: 1.5rem;"></i> Custom HTML/CSS/JS</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Discuss Your Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to build your dream website?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Let's discuss your vision and create something amazing together.</p>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Contact Us Today <i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 45px; width: auto; object-fit: contain;">
+      </a>
+      <p style="color: var(--text-muted); margin: 0;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Calculator & Menu -->
+  <script>
+    function calcWebCost() {
+      const baseCost = parseFloat(document.getElementById('webType').value);
+      const contentCost = parseFloat(document.getElementById('webContent').value);
+      const brandCost = parseFloat(document.getElementById('webBrand').value);
+      
+      const total = baseCost + contentCost + brandCost;
+      document.getElementById('webCostDisplay').innerText = `$${total.toFixed(2)}`;
+    }
+
+    // Initial Calculation on load
+    window.onload = function() {
+      calcWebCost();
+    };
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
