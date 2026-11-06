@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopify Store Setup & Management — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Shopify <span class="gradient-text">Store Development</span></h1>
+      <p class="page-subtitle">Launch, customize, and scale your online store with our expert Shopify solutions.</p>
+    </div>
+  </section>
+
+  <!-- INTRO TEXT -->
+  <section class="calc-intro-text" style="padding: 40px 0 10px;">
+    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
+      
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
+        Turn your ideas into a <span class="gradient-text">profitable Shopify store.</span>
+      </h2>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+        Shopify powers millions of businesses worldwide because of its ease of use and powerful features. However, setting it up correctly from day one is crucial. A poorly configured store can lead to abandoned carts and lost revenue.
+      </p>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+        <strong>From custom theme design to app integrations and product uploading,</strong> we handle the technical side of things so you can focus on marketing and selling your products.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ⚡ SHOPIFY COST ESTIMATOR -->
+  <section class="calculator-section" style="padding: 40px 0 60px;">
+    <div class="container">
+      <div class="calculator-box glass-panel" style="max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 24px;">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Shopify Setup Estimator</h2>
+          <p style="color: var(--text-muted);">Estimate the cost of launching your new store.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 20px; text-align: left; margin-bottom: 30px;">
+          
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">What package do you need?</label>
+            <select id="shopifyPackage" onchange="calcShopifyCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="500">Basic Store Setup ($500+)</option>
+              <option value="1000">Premium Theme Customization ($1,000+)</option>
+              <option value="2000">Full Store & Branding ($2,000+)</option>
+              <option value="3500">Enterprise / Custom App ($3,500+)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Product Uploading Quantity?</label>
+            <select id="shopifyProducts" onchange="calcShopifyCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="0">I will upload myself</option>
+              <option value="150">Up to 50 Products (+$150)</option>
+              <option value="300">Up to 150 Products (+$300)</option>
+              <option value="500">Up to 300 Products (+$500)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Need App Integration & SEO?</label>
+            <select id="shopifyExtras" onchange="calcShopifyCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option value="0">No, basic setup only</option>
+              <option value="250">Yes, Apps & Basic SEO (+$250)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="calc-result" style="text-align: center; background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid var(--primary);">
+          <h3 style="color: white; font-size: 1.1rem; margin-bottom: 5px;">Estimated Setup Cost:</h3>
+          <span id="shopifyCostDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">$500.00</span>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 10px;">*This is a rough estimate. Contact us for an exact quote.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px;">Get a Custom Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
+    <div class="container content-grid">
+      
+      <div class="text-content">
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Why Choose Our Shopify Services?</h2>
+        <p>Our Shopify services are an all-around solution that helps arm a business to succeed in the highly competitive online marketplace. Ranging from designing and developing custom Shopify stores up to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.</p>
+        
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Ecommerce" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our End-to-End Process</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+          <li><strong>Store Design & Setup:</strong> We create visually stunning, mobile-friendly stores.</li>
+          <li><strong>Theme Customization:</strong> Tailoring premium themes to match your brand.</li>
+          <li><strong>Product Uploading:</strong> Adding products with SEO-optimized titles and descriptions.</li>
+          <li><strong>App Integration:</strong> Setting up payment gateways, reviews, and email marketing apps.</li>
+        </ul>
+
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Shopify Analytics" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Maximize Your Conversions</h2>
+        <p>Our team of Shopify experts creates user-friendly stores that drive conversions and maximize sales through the latest tools and technologies. With our unique strategy and approach, we will help you unlock all the potential in Shopify to attain your e-commerce goals.</p>
+
+        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop" alt="Shopify Mobile" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">What We Offer</h3>
+          <ul class="platform-list" style="list-style: none; padding: 0;">
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Custom Shopify Themes</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-upload" style="color: var(--primary); font-size: 1.5rem;"></i> Bulk Product Uploading</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-puzzle-piece" style="color: var(--primary); font-size: 1.5rem;"></i> App Integration</li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-chart-line" style="color: var(--primary); font-size: 1.5rem;"></i> Conversion Optimization</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Hire a Shopify Expert</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to launch your Shopify store?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Let's build a store that not only looks great but sells even better.</p>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Contact Us Today <i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 45px; width: auto; object-fit: contain;">
+      </a>
+      <p style="color: var(--text-muted); margin: 0;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Calculator & Menu -->
+  <script>
+    function calcShopifyCost() {
+      const pkg = parseFloat(document.getElementById('shopifyPackage').value);
+      const products = parseFloat(document.getElementById('shopifyProducts').value);
+      const extras = parseFloat(document.getElementById('shopifyExtras').value);
+      
+      const total = pkg + products + extras;
+      document.getElementById('shopifyCostDisplay').innerText = `$${total.toFixed(2)}`;
+    }
+
+    // Initial Calculation on load
+    window.onload = function() {
+      calcShopifyCost();
+    };
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
