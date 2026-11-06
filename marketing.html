@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Marketing & Ads — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header" style="padding-top: 160px; padding-bottom: 20px;">
+    <div class="container">
+      <h1 class="page-title">Social Media & <span class="gradient-text">PPC Marketing</span></h1>
+      <p class="page-subtitle">Data-driven marketing strategies to grow your audience and multiply your revenue.</p>
+    </div>
+  </section>
+
+  <!-- INTRO TEXT -->
+  <section class="calc-intro-text" style="padding: 40px 0 10px;">
+    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
+      
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
+        Stop wasting money on <span class="gradient-text">ads that don't convert.</span>
+      </h2>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+        Running ads is easy; making them profitable is hard. With rising ad costs, you need a strategy that targets the right people at the right time. Random posting and boosting won't grow your business.
+      </p>
+      
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+        <strong>We use deep data analytics to scale your campaigns.</strong> Whether it's Facebook, Instagram, TikTok, or Google Ads, our focus is on one metric: <strong>ROAS (Return on Ad Spend).</strong> We build funnels that turn clicks into cash.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ⚡ ROAS CALCULATOR -->
+  <section class="calculator-section" style="padding: 40px 0 60px;">
+    <div class="container">
+      <div class="calculator-box glass-panel" style="max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 24px;">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">ROAS Calculator</h2>
+          <p style="color: var(--text-muted);">Check if your ads are actually making you money.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; margin-bottom: 30px;">
+          
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Total Ad Spend ($)</label>
+            <input type="number" id="adSpend" placeholder="e.g. 500" oninput="calcROAS()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Revenue Generated ($)</label>
+            <input type="number" id="adRevenue" placeholder="e.g. 1500" oninput="calcROAS()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+          </div>
+
+        </div>
+
+        <div class="calc-result" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center;">
+          
+          <div style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid var(--primary);">
+            <h3 style="color: white; font-size: 1.1rem; margin-bottom: 5px;">Your ROAS</h3>
+            <span id="roasDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">0.0x</span>
+          </div>
+
+          <div style="background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid var(--primary);">
+            <h3 style="color: white; font-size: 1.1rem; margin-bottom: 5px;">Net Profit</h3>
+            <span id="profitDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">$0.00</span>
+          </div>
+
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 20px;">*A ROAS of 3x or higher is generally considered good for e-commerce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
+    <div class="container content-grid">
+      
+      <div class="text-content">
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Full-Funnel Marketing Strategy</h2>
+        <p>We don't just run ads; we build complete sales funnels. From creating eye-catching creatives that stop the scroll, to writing compelling ad copy, and optimizing the landing page for maximum conversion—we handle it all.</p>
+        
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Marketing Analytics" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Platforms We Master</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+          <li><strong>Meta Ads (Facebook & Instagram):</strong> Advanced targeting and retargeting.</li>
+          <li><strong>Google Ads:</strong> Search, Display, and Shopping campaigns.</li>
+          <li><strong>TikTok Ads:</strong> Viral short-form video content that converts.</li>
+          <li><strong>Email Marketing:</strong> Klaviyo & Mailchimp flows to recover abandoned carts.</li>
+        </ul>
+
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Social Media Marketing Team" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Content That Captivates</h2>
+        <p>Great ads need great content. Our team of graphic designers and video editors create high-converting visuals, UGC (User Generated Content) style videos, and engaging social media posts that build brand loyalty and drive sales.</p>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Our Marketing Services</h3>
+          <ul class="platform-list" style="list-style: none; padding: 0;">
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-facebook" style="color: var(--primary); font-size: 1.5rem;"></i> Meta Ads Management</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-google" style="color: var(--primary); font-size: 1.5rem;"></i> Google PPC Campaigns</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-tiktok" style="color: var(--primary); font-size: 1.5rem;"></i> TikTok Video Ads</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-envelope-open-text" style="color: var(--primary); font-size: 1.5rem;"></i> Email Flows (Klaviyo)</li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-chart-pie" style="color: var(--primary); font-size: 1.5rem;"></i> Conversion Rate Optimization</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Scale Your Ads Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to scale your revenue?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Let's audit your current ad account and create a winning strategy.</p>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Get a Free Audit <i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 45px; width: auto; object-fit: contain;">
+      </a>
+      <p style="color: var(--text-muted); margin: 0;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Calculator & Menu -->
+  <script>
+    function calcROAS() {
+      const spend = parseFloat(document.getElementById('adSpend').value) || 0;
+      const revenue = parseFloat(document.getElementById('adRevenue').value) || 0;
+      
+      let roas = 0;
+      let profit = 0;
+      
+      if (spend > 0) {
+        roas = revenue / spend;
+      }
+      
+      profit = revenue - spend;
+
+      const roasDisplay = document.getElementById('roasDisplay');
+      const profitDisplay = document.getElementById('profitDisplay');
+
+      roasDisplay.innerText = `${roas.toFixed(1)}x`;
+      profitDisplay.innerText = `$${profit.toFixed(2)}`;
+
+      // Color Logic
+      if (profit < 0) {
+        profitDisplay.style.color = '#ef4444';
+      } else {
+        profitDisplay.style.color = 'var(--accent)';
+      }
+
+      if (roas < 1) {
+        roasDisplay.style.color = '#ef4444';
+      } else if (roas >= 1 && roas < 2.5) {
+        roasDisplay.style.color = '#f59e0b'; // Orange for warning
+      } else {
+        roasDisplay.style.color = 'var(--accent)'; // Green for good
+      }
+    }
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
