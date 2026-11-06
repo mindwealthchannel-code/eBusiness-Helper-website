@@ -198,26 +198,84 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Calculator -->
+    <!-- JavaScript for Calculator -->
   <script>
-    function calculateProfit() {
-      const price = parseFloat(document.getElementById('calcPrice').value) || 0;
-      const cost = parseFloat(document.getElementById('calcCost').value) || 0;
-      const fees = parseFloat(document.getElementById('calcFees').value) || 0;
+    let currentSymbol = '£';
+
+    // Market Change Function (UK/US)
+    function switchCurrency(symbol, region) {
+      currentSymbol = symbol;
       
-      const profit = price - cost - fees;
-      const display = document.getElementById('calcProfitDisplay');
-      
-      if (profit < 0) {
-        display.style.color = '#ef4444'; 
+      // Saare £ ya $ ke nishanat change karein
+      document.querySelectorAll('.curr-symbol').forEach(el => {
+        el.innerText = symbol;
+      });
+
+      // Buttons ka color change karein
+      const buttons = document.querySelectorAll('.currency-btn');
+      buttons.forEach(btn => {
+        btn.style.background = 'transparent';
+        btn.style.borderColor = 'var(--card-border)';
+      });
+
+      if (region === 'UK') {
+        buttons[0].style.background = 'var(--primary)';
+        buttons[0].style.borderColor = 'var(--primary)';
       } else {
-        display.style.color = 'var(--accent)'; 
+        buttons[1].style.background = 'var(--primary)';
+        buttons[1].style.borderColor = 'var(--primary)';
       }
-      
-      display.innerText = `$${profit.toFixed(2)}`;
+
+      calcAmazon(); // Hisab dobara chalayein
     }
 
-    // Mobile Menu Toggle
+    // Main Calculation Function
+    function calcAmazon() {
+      // Inputs se values lena (agar khali ho toh 0)
+      const price = parseFloat(document.getElementById('itemPrice').value) || 0;
+      const shipCharge = parseFloat(document.getElementById('shipCharge').value) || 0;
+      const itemCost = parseFloat(document.getElementById('itemCost').value) || 0;
+      const shipCost = parseFloat(document.getElementById('shipCost').value) || 0;
+      const refFeePercent = parseFloat(document.getElementById('refFee').value) || 0;
+      const fbaFee = parseFloat(document.getElementById('fbaFee').value) || 0;
+
+      // Hisab
+      const totalRevenue = price + shipCharge;
+      const referralFeeAmount = totalRevenue * (refFeePercent / 100);
+      const totalCosts = itemCost + shipCost + referralFeeAmount + fbaFee;
+      const profit = totalRevenue - totalCosts;
+      
+      let margin = 0;
+      if (totalRevenue > 0) {
+        margin = (profit / totalRevenue) * 100;
+      }
+
+      // Screen par result update karein
+      document.getElementById('resRevenue').innerHTML = `${currentSymbol}${totalRevenue.toFixed(2)}`;
+      document.getElementById('resCosts').innerHTML = `${currentSymbol}${totalCosts.toFixed(2)}`;
+      
+      const profitEl = document.getElementById('resProfit');
+      const marginEl = document.getElementById('resMargin');
+
+      profitEl.innerHTML = `${currentSymbol}${profit.toFixed(2)}`;
+      marginEl.innerText = `${margin.toFixed(1)}%`;
+
+      // Color Change (Loss = Red, Profit = Green)
+      if (profit < 0) {
+        profitEl.style.color = '#ef4444';
+        marginEl.style.color = '#ef4444';
+      } else {
+        profitEl.style.color = 'var(--accent)';
+        marginEl.style.color = 'var(--accent)';
+      }
+    }
+
+    // Page load hote hi hisab chala dein
+    window.onload = function() {
+      calcAmazon();
+    };
+
+    // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if (hamburger) {
