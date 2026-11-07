@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
 
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="about-icon">
+          <i class="fa-solid fa-fingerprint"></i>
+        </div>
+        <h1>About <span class="gradient-text">eBusiness Helper</span></h1>
+        <p class="about-hero-sub">- eBusiness Helper</p>
+      </div>
+      
+      <p class="about-main-text">
+        e-Business Helper represents a vibrant team of digital experts devoted to propelling businesses into the online world forward. We focus on e-commerce management, web development, and creative marketing solutions in an effort to revolutionize the way businesses operate and engage with their audience. At eBusiness Helper, we strive for excellence and innovation, giving every customer the strategies tailored to their needs, along with top-notch service, as we find our way through this ever-changing landscape of digital.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ & CONTACT GRID -->
+  <section class="about-faq-section">
+    <div class="container faq-grid">
+      
+      <!-- Left Side: FAQs -->
+      <div class="faq-accordion">
+        
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What services do you offer?</span>
+            <i class="fa-solid fa-minus"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We provide a comprehensive range of digital solutions including e-commerce management, web development, social media marketing, content creation, photography, videography, and graphic design.</p>
+          </div>
+        </div>
+
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How do you ensure client satisfaction?</span>
+            <i class="fa-solid fa-minus"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We prioritize open communication, personalized strategies, and a commitment to excellence in every project. Our dedicated team ensures client needs are met and expectations are consistently exceeded.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What sets you apart from competitors?</span>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our comprehensive approach, innovative solutions, and dedication to client success differentiate us in the market. We focus on delivering tangible results and building long-term partnerships rather than just short-term gains.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How can I get started with your services?</span>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Simply reach out to us through our contact page or email. We'll schedule a free consultation to discuss your specific needs and tailor a strategic plan to achieve your goals effectively.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Side: Contact Box -->
+      <div class="about-contact-box glass-panel">
+        <h3>Have Questions?</h3>
+        <p>Explore common inquiries about our services, from what we offer to how to get started. We’re here to provide clarity and guide you through the process seamlessly. Contact us for more information.</p>
+        <a href="#contact" class="btn btn-primary btn-block">Read More / Contact Us</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+    <div class="container text-center">
+      <h2 class="section-title">Let's build something great.</h2>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Partner with us to navigate the digital landscape and achieve your business goals.</p>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Email Us <i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 45px; width: auto; object-fit: contain;">
+      </a>
+      <p style="color: var(--text-muted); margin: 0;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for FAQ & Menu -->
+  <script>
+    function toggleFaq(element) {
+      const item = element.parentElement;
+      const icon = element.querySelector('i');
+      
+      // Close others (optional, agar ek waqt mein ek hi khulna chahiye)
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        if (faq !== item) {
+          faq.classList.remove('active');
+          faq.querySelector('i').className = 'fa-solid fa-plus';
+        }
+      });
+
+      // Toggle current
+      item.classList.toggle('active');
+      if (item.classList.contains('active')) {
+        icon.className = 'fa-solid fa-minus';
+      } else {
+        icon.className = 'fa-solid fa-plus';
+      }
+    }
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
