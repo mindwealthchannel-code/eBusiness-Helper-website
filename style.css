@@ -252,3 +252,143 @@ section { padding: 80px 0; }
     margin-bottom: 30px; /* Mobile par space kam kar diya */
   }
 }
+/* =========================================
+   ABOUT US PAGE DESIGN
+   ========================================= */
+.about-hero {
+  padding-top: 180px;
+  padding-bottom: 60px;
+}
+
+.about-hero-content {
+  margin-bottom: 40px;
+}
+
+.about-icon {
+  font-size: 4rem;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.about-hero-sub {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.about-main-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 1000px;
+}
+
+/* FAQ Grid */
+.about-faq-section {
+  padding-bottom: 80px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Accordion Design */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: transparent;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 15px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Active (Open) State */
+.faq-item.active .faq-question {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Inactive State */
+.faq-item:not(.active) .faq-question {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.faq-item:not(.active) .faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-question i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.faq-item.active .faq-question i {
+  color: #000000;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0 20px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Right Side Contact Box */
+.about-contact-box {
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--primary); /* Blue border like screenshot */
+}
+
+.about-contact-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.about-contact-box p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
