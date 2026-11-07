@@ -179,3 +179,76 @@ section { padding: 80px 0; }
   .rail-card.active .card-content { align-items: flex-start; }
   .rail-card.active .card-details { display: block; margin-top: 15px; }
 }
+/* =========================================
+   APPROACH CARDS SECTION (Screenshot Style)
+   ========================================= */
+.approach-section {
+  padding: 80px 0;
+  background: var(--bg); /* Dark background */
+  position: relative;
+  z-index: 10;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Cards ek line mein */
+  gap: 20px;
+}
+
+.approach-card {
+  background: #0b0f19; /* Thoda dark grey background */
+  border: 1px solid #1a2235;
+  padding: 40px 30px;
+  border-radius: 4px; /* Screenshot jaisa halka sa square look */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.approach-card:hover {
+  border-color: var(--primary); /* Hover par blue border */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.approach-icon {
+  font-size: 2.5rem;
+  color: var(--text); /* Default color white (Screenshot ke pehle card jaisa) */
+  margin-bottom: 60px; /* Icon aur text ke darmiyan space */
+  transition: color 0.3s;
+}
+
+/* Screenshot mein pehle card ka icon white tha aur baqi ke blue, 
+   lekin hover par sab ka blue ho jayega */
+.approach-card:hover .approach-icon {
+  color: var(--primary);
+}
+
+.approach-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.approach-card p {
+  color: #94a3b8; /* Light grey text */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Mobile aur Tablet ke liye adjust karna */
+@media (max-width: 1024px) {
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet par 2 cards ek line mein */
+  }
+}
+
+@media (max-width: 768px) {
+  .approach-grid {
+    grid-template-columns: 1fr; /* Mobile par 1 card ek line mein */
+  }
+  .approach-icon {
+    margin-bottom: 30px; /* Mobile par space kam kar diya */
+  }
+}
