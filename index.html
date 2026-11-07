@@ -270,7 +270,7 @@
   <script src="script.js"></script>
   
   <!-- JavaScript for Rail Cards & Menu -->
-  <script>
+    <script>
     function toggleCard(clickedCard) {
       const isActive = clickedCard.classList.contains('active');
       document.querySelectorAll('.rail-card').forEach(card => {
@@ -281,6 +281,27 @@
       }
     }
 
+    // 👇 YEH NAYA CODE YAHAN PASTE KAREIN 👇
+    function toggleFaq(element) {
+      const item = element.parentElement;
+      const icon = element.querySelector('i');
+      
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        if (faq !== item) {
+          faq.classList.remove('active');
+          faq.querySelector('i').className = 'fa-solid fa-plus';
+        }
+      });
+
+      item.classList.toggle('active');
+      if (item.classList.contains('active')) {
+        icon.className = 'fa-solid fa-minus';
+      } else {
+        icon.className = 'fa-solid fa-plus';
+      }
+    }
+    // 👆 NAYA CODE KHATAM 👆
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if (hamburger) {
@@ -289,5 +310,3 @@
       });
     }
   </script>
-</body>
-</html>
