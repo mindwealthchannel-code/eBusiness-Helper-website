@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
 
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container text-center">
+      <h1 class="page-title">Our Premium <span class="gradient-text">Services</span></h1>
+      <p class="page-subtitle">Explore the digital solutions we offer to scale your business.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-grid-section" style="padding-bottom: 80px;">
+    <div class="container">
+      <div class="bento-grid">
+        
+        <!-- Service 1 -->
+        <a href="ecommerce.html" style="text-decoration: none; color: inherit;">
+          <div class="bento-card">
+            <div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3>E-Commerce Management</h3>
+            <p>End-to-end store management. We handle products, orders, and customer experience.</p>
+            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Service 2 -->
+        <a href="shopify.html" style="text-decoration: none; color: inherit;">
+          <div class="bento-card">
+            <div class="icon-box"><i class="fa-brands fa-shopify"></i></div>
+            <h3>Shopify Store Setup</h3>
+            <p>Complete Shopify store setup, theme customization, and product uploading.</p>
+            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Service 3 -->
+        <a href="amazon.html" style="text-decoration: none; color: inherit;">
+          <div class="bento-card">
+            <div class="icon-box"><i class="fa-brands fa-amazon"></i></div>
+            <h3>Amazon FBA/FBM</h3>
+            <p>Amazon store management, product hunting, and listing optimization.</p>
+            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Service 4 -->
+        <a href="web-design.html" style="text-decoration: none; color: inherit;">
+          <div class="bento-card">
+            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Website Design</h3>
+            <p>Fast, responsive, and conversion-focused custom websites.</p>
+            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Service 5 -->
+        <a href="marketing.html" style="text-decoration: none; color: inherit;">
+          <div class="bento-card">
+            <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3>Marketing</h3>
+            <p>Data-driven Social Media and PPC marketing strategies.</p>
+            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 45px; width: auto; object-fit: contain;">
+      </a>
+      <p style="color: var(--text-muted); margin: 0;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
