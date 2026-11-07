@@ -392,3 +392,98 @@ section { padding: 80px 0; }
     grid-template-columns: 1fr;
   }
 }
+/* =========================================
+   RUNNING DATA TICKER (MODERN & CENTERED)
+   ========================================= */
+.data-ticker-section {
+  background: #080c16; /* Slightly different dark bg */
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 25px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-wrapper {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  /* Gradient fade effect on edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 30px; /* Gap between blocks */
+  animation: scrollTicker 45s linear infinite;
+  padding-left: 30px;
+}
+
+/* Pause on hover */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* Modern Block Design for each item */
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 12px 24px;
+  border-radius: 50px; /* Pill shape */
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ticker-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.ticker-item i {
+  font-size: 1.4rem;
+}
+
+.ticker-item strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Link Design inside block */
+.ticker-item a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  background: rgba(0, 229, 160, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.ticker-item a:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+@keyframes scrollTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Shift by half the width to create a seamless loop */
+    transform: translateX(-50%); 
+  }
+}
