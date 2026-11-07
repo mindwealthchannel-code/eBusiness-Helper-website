@@ -323,6 +323,26 @@
       </div>
     </div>
   </section>
+  
+    <!-- 📰 LIVE BLOOMBERG NEWS TICKER -->
+  <section class="bloomberg-ticker-section" style="background: #050914; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 20px 0; overflow: hidden; position: relative; z-index: 10;">
+    <div class="container" style="display: flex; align-items: center; gap: 20px;">
+      
+      <!-- Bloomberg Label -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; border-right: 1px solid var(--card-border); padding-right: 20px;">
+        <i class="fa-solid fa-chart-line" style="color: #3b82f6; font-size: 1.2rem;"></i>
+        <span style="color: white; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px;">MARKET PULSE</span>
+      </div>
+
+      <!-- Ticker Container -->
+      <div class="bloomberg-ticker-wrapper" style="flex-grow: 1; overflow: hidden; display: flex;">
+        <div id="bloomberg-ticker" class="bloomberg-ticker-track" style="display: flex; gap: 40px; white-space: nowrap; animation: scrollTicker 40s linear infinite;">
+          <span style="color: var(--text-muted);">Loading latest business news...</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
     <!-- OPEN A TICKET / QUICK INQUIRY SECTION -->
   <section class="ticket-section" id="open-ticket" style="padding: 80px 0; background: var(--bg); position: relative; z-index: 10;">
