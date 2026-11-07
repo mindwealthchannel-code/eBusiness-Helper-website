@@ -11,6 +11,122 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Inline CSS for Services Page Specifics -->
+  <style>
+    /* Professional Services Grid Styling */
+    .services-hero {
+      padding-top: 180px;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+    
+    .services-intro {
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .pro-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding-bottom: 80px;
+    }
+
+    .pro-service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .pro-service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Top colored border on hover */
+    .pro-service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .pro-service-card:hover::before {
+      opacity: 1;
+    }
+
+    .pro-icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      transition: all 0.4s ease;
+    }
+
+    .pro-service-card:hover .pro-icon-box {
+      background: var(--primary);
+      color: #fff;
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .pro-service-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text);
+      transition: color 0.3s ease;
+    }
+
+    .pro-service-card:hover h3 {
+      color: var(--primary);
+    }
+
+    .pro-service-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .pro-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: gap 0.3s ease;
+    }
+
+    .pro-service-card:hover .pro-read-more {
+      gap: 15px;
+    }
+  </style>
 </head>
 <body>
 
@@ -25,7 +141,7 @@
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" style="color: var(--primary);">Services</a>
         <a href="about.html">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -36,67 +152,61 @@
     </div>
   </header>
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container text-center">
+  <!-- PAGE HEADER & INTRO -->
+  <section class="services-hero">
+    <div class="container">
       <h1 class="page-title">Our Premium <span class="gradient-text">Services</span></h1>
-      <p class="page-subtitle">Explore the digital solutions we offer to scale your business.</p>
+      
+      <!-- Introduction Text -->
+      <p class="services-intro">
+        At eBusiness Helper, we provide a comprehensive suite of digital solutions designed to elevate your brand. Whether you are looking to launch a new e-commerce store, optimize your Amazon presence, or build a high-converting website, our team of experts is here to help. Explore our services below and discover how we can drive your business forward.
+      </p>
     </div>
   </section>
 
   <!-- SERVICES GRID -->
-  <section class="services-grid-section" style="padding-bottom: 80px;">
+  <section class="services-grid-section">
     <div class="container">
-      <div class="bento-grid">
+      <div class="pro-services-grid">
         
         <!-- Service 1 -->
-        <a href="ecommerce.html" style="text-decoration: none; color: inherit;">
-          <div class="bento-card">
-            <div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3>E-Commerce Management</h3>
-            <p>End-to-end store management. We handle products, orders, and customer experience.</p>
-            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
+        <a href="ecommerce.html" class="pro-service-card">
+          <div class="pro-icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>E-Commerce Management</h3>
+          <p>End-to-end store management. We handle products, orders, and customer experience to grow your brand.</p>
+          <span class="pro-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
         <!-- Service 2 -->
-        <a href="shopify.html" style="text-decoration: none; color: inherit;">
-          <div class="bento-card">
-            <div class="icon-box"><i class="fa-brands fa-shopify"></i></div>
-            <h3>Shopify Store Setup</h3>
-            <p>Complete Shopify store setup, theme customization, and product uploading.</p>
-            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
+        <a href="shopify.html" class="pro-service-card">
+          <div class="pro-icon-box"><i class="fa-brands fa-shopify"></i></div>
+          <h3>Shopify Store Setup</h3>
+          <p>Complete Shopify store setup, theme customization, and product uploading for a seamless launch.</p>
+          <span class="pro-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
         <!-- Service 3 -->
-        <a href="amazon.html" style="text-decoration: none; color: inherit;">
-          <div class="bento-card">
-            <div class="icon-box"><i class="fa-brands fa-amazon"></i></div>
-            <h3>Amazon FBA/FBM</h3>
-            <p>Amazon store management, product hunting, and listing optimization.</p>
-            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
+        <a href="amazon.html" class="pro-service-card">
+          <div class="pro-icon-box"><i class="fa-brands fa-amazon"></i></div>
+          <h3>Amazon FBA/FBM</h3>
+          <p>Amazon store management, product hunting, and listing optimization to maximize your sales.</p>
+          <span class="pro-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
         <!-- Service 4 -->
-        <a href="web-design.html" style="text-decoration: none; color: inherit;">
-          <div class="bento-card">
-            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-            <h3>Website Design</h3>
-            <p>Fast, responsive, and conversion-focused custom websites.</p>
-            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
+        <a href="web-design.html" class="pro-service-card">
+          <div class="pro-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Website Design</h3>
+          <p>Fast, responsive, and conversion-focused custom websites built to represent your brand perfectly.</p>
+          <span class="pro-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
         <!-- Service 5 -->
-        <a href="marketing.html" style="text-decoration: none; color: inherit;">
-          <div class="bento-card">
-            <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
-            <h3>Marketing</h3>
-            <p>Data-driven Social Media and PPC marketing strategies.</p>
-            <span style="color: var(--primary); margin-top: 15px; font-weight: 600; font-size: 0.9rem;">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
+        <a href="marketing.html" class="pro-service-card">
+          <div class="pro-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Social Media Marketing</h3>
+          <p>Data-driven Social Media and PPC marketing strategies to grow your audience and revenue.</p>
+          <span class="pro-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
         </a>
 
       </div>
