@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Support — eBusiness Helper</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    /* Support Page Specific Styles */
+    .support-hero {
+      padding-top: 180px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .support-info h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .support-info p {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Contact Option Boxes */
+    .support-options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .support-option-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .support-option-box:hover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+      transform: translateX(5px);
+    }
+
+    .support-option-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .support-option-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .support-option-text p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* FAQ Mini */
+    .support-faq {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .support-faq h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .support-faq p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 992px) {
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 65px; width: auto; object-fit: contain;">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#ticket-form" class="btn btn-primary">Get Help <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="support-hero">
+    <div class="container">
+      <h1 class="page-title">We're Here to <span class="gradient-text">Help You</span></h1>
+      <p class="page-subtitle">Facing an issue? Need assistance? Our dedicated support team is available 24/7.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="container">
+    <div class="support-grid">
+      
+      <!-- Left Side: Contact Options -->
+      <div class="support-info">
+        <h3>Get in touch instantly</h3>
+        <p>Choose the best way to reach us. Whether it's a quick question or a complex technical issue, we're just a click away.</p>
+        
+        <div class="support-options">
+          
+          <!-- WhatsApp -->
+          <a href="https://wa.me/923234037697" target="_blank" class="support-option-box">
+            <div class="support-option-icon" style="color: #25D366; background: rgba(37, 211, 102, 0.1);"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="support-option-text">
+              <h4>WhatsApp Support</h4>
+              <p>+92-323-4037-697 (Fastest Response)</p>
+            </div>
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:+923334855051" class="support-option-box">
+            <div class="support-option-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="support-option-text">
+              <h4>Call Us Directly</h4>
+              <p>+92-333-4855-051</p>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:hello@ebusinesshelper.com" class="support-option-box">
+            <div class="support-option-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="support-option-text">
+              <h4>Email Us</h4>
+              <p>hello@ebusinesshelper.com</p>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Quick FAQ -->
+        <div class="support-faq">
+          <h4><i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> Before you submit a ticket:</h4>
+          <p>• Please provide as much detail as possible about your issue.</p>
+          <p>• If it's a technical issue, screenshots are highly appreciated.</p>
+          <p>• Our average response time is under 2 hours.</p>
+        </div>
+      </div>
+
+      <!-- Right Side: Ticket Form -->
+      <div class="glass-form" id="ticket-form" style="padding: 40px; border-radius: 24px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 25px;">Submit a Support Ticket</h3>
+        
+        <form>
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Full Name</label>
+            <input type="text" placeholder="John Doe" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Email Address</label>
+            <input type="email" placeholder="john@example.com" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">What service is this regarding?</label>
+            <select style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
+              <option>General Inquiry</option>
+              <option>E-Commerce Support</option>
+              <option>Shopify Support</option>
+              <option>Amazon Support</option>
+              <option>Website Technical Issue</option>
+              <option>Marketing Support</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Describe your issue</label>
+            <textarea placeholder="Please describe your issue in detail..." rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 14px; font-size: 1rem;">Submit Ticket <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="background: #050914; padding: 40px 0; border-top: 1px solid var(--card-border);">
+    <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+      
+      <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="eBusiness Helper Logo" style="height: 50px; width: auto; object-fit: contain;">
+      </a>
+
+      <div class="socials" style="display: flex; gap: 15px; align-items: center;">
+        <a href="https://www.facebook.com/eBusinessHelper/" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #1877F2; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ebusinesshelperofficial/" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/923234037697" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none;"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem;">© 2026 eBusiness Helper. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
