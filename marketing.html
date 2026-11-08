@@ -16,7 +16,7 @@
     /* Professional 2-Column Layout */
     .marketing-layout {
       display: grid;
-      grid-template-columns: 1.6fr 1fr; /* Left side bada, Right side chota */
+      grid-template-columns: 1.6fr 1fr;
       gap: 50px;
       align-items: start;
       padding-bottom: 80px;
@@ -39,7 +39,6 @@
       margin-bottom: 20px;
     }
 
-    /* Single Relevant Image */
     .left-content img {
       width: 100%;
       height: 350px;
@@ -50,7 +49,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    /* Right Sidebar Sticky */
     .right-sidebar {
       position: sticky;
       top: 100px;
@@ -88,6 +86,59 @@
       outline: none;
       border-color: var(--primary);
       background: rgba(0,0,0,0.4);
+    }
+
+    /* Ticker Styling */
+    .data-ticker-section {
+      padding: 25px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 40px;
+    }
+
+    .ticker-wrapper {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 20px;
+      white-space: nowrap;
+      animation: scrollTicker 40s linear infinite;
+      padding-left: 20px;
+    }
+
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .ticker-item strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    @keyframes scrollTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 992px) {
@@ -133,11 +184,118 @@
     </div>
   </section>
 
+  <!-- LIVE MARKET DATA TICKER -->
+  <section class="data-ticker-section">
+    <div style="text-align: center; margin-bottom: 15px;">
+      <p style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Live 2025 Market Data: Where Your Customers Are</p>
+    </div>
+    
+    <div class="ticker-wrapper">
+      <div class="ticker-track">
+        
+        <!-- Meta -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-meta" style="color: #1877F2; font-size: 1.2rem;"></i>
+          <span>Meta (FB/IG) Ads: <strong>$196.2 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-meta" style="color: #1877F2; font-size: 1.2rem;"></i>
+          <span>Meta Users: <strong>3.58 Billion</strong> daily active users</span>
+        </div>
+
+        <!-- Google -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-google" style="color: #EA4335; font-size: 1.2rem;"></i>
+          <span>Google Ads: <strong>$294.7 Billion</strong> spent in 2025</span>
+        </div>
+
+        <!-- YouTube -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 1.2rem;"></i>
+          <span>YouTube Ads: <strong>$40.4 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 1.2rem;"></i>
+          <span>YouTube Users: <strong>2.5 Billion+</strong> monthly active users</span>
+        </div>
+
+        <!-- TikTok -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 1.2rem;"></i>
+          <span>TikTok Ads: <strong>$33 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 1.2rem;"></i>
+          <span>TikTok Users: <strong>1.98 Billion</strong> active users</span>
+        </div>
+
+        <!-- Pinterest -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 1.2rem;"></i>
+          <span>Pinterest Ads: <strong>$4.22 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 1.2rem;"></i>
+          <span>Pinterest Users: <strong>619 Million</strong> monthly active users</span>
+        </div>
+
+        <!-- Amazon -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-amazon" style="color: #FF9900; font-size: 1.2rem;"></i>
+          <span>Amazon Ads: <strong>$68.6 Billion</strong> spent in 2025</span>
+        </div>
+
+        <!-- Duplicate for continuous loop -->
+        <div class="ticker-item">
+          <i class="fa-brands fa-meta" style="color: #1877F2; font-size: 1.2rem;"></i>
+          <span>Meta (FB/IG) Ads: <strong>$196.2 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-meta" style="color: #1877F2; font-size: 1.2rem;"></i>
+          <span>Meta Users: <strong>3.58 Billion</strong> daily active users</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-google" style="color: #EA4335; font-size: 1.2rem;"></i>
+          <span>Google Ads: <strong>$294.7 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 1.2rem;"></i>
+          <span>YouTube Ads: <strong>$40.4 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 1.2rem;"></i>
+          <span>YouTube Users: <strong>2.5 Billion+</strong> monthly active users</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 1.2rem;"></i>
+          <span>TikTok Ads: <strong>$33 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 1.2rem;"></i>
+          <span>TikTok Users: <strong>1.98 Billion</strong> active users</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 1.2rem;"></i>
+          <span>Pinterest Ads: <strong>$4.22 Billion</strong> spent in 2025</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 1.2rem;"></i>
+          <span>Pinterest Users: <strong>619 Million</strong> monthly active users</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-brands fa-amazon" style="color: #FF9900; font-size: 1.2rem;"></i>
+          <span>Amazon Ads: <strong>$68.6 Billion</strong> spent in 2025</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- MAIN 2-COLUMN LAYOUT -->
   <section class="container">
     <div class="marketing-layout">
       
-      <!-- LEFT COLUMN: Details -->
+      <!-- LEFT COLUMN -->
       <div class="left-content">
         
         <h2 style="margin-top: 0;">Stop wasting money on ads that don't convert.</h2>
@@ -148,7 +306,6 @@
           <strong>We use deep data analytics to scale your campaigns.</strong> Whether it's Facebook, Instagram, TikTok, or Google Ads, our focus is on one metric: <strong>ROAS (Return on Ad Spend).</strong> We build funnels that turn clicks into cash.
         </p>
 
-        <!-- Relevant Picture (Marketing Team/Analytics) -->
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Social Media Marketing Team">
 
         <h2>Full-Funnel Marketing Strategy</h2>
@@ -167,10 +324,9 @@
 
       </div>
 
-      <!-- RIGHT COLUMN: Form & Sidebar -->
+      <!-- RIGHT COLUMN -->
       <div class="right-sidebar">
         
-        <!-- Our Marketing Services Box -->
         <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
           <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Our Marketing Services</h3>
           <ul class="platform-list" style="list-style: none; padding: 0;">
@@ -182,7 +338,6 @@
           </ul>
         </div>
 
-        <!-- Inquiry Form -->
         <div class="marketing-form-box">
           <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Tell Us Your Requirements</h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Let us know what you are looking for, and we will get back to you with a custom plan.</p>
@@ -240,20 +395,18 @@
     <div class="container">
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
         
-        <!-- Column 1 -->
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
           <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 15px;">
             <img src="logo.png" alt="eBusiness Helper Logo" style="height: 55px; width: auto; object-fit: contain;">
           </a>
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            We are a team of digital experts dedicated to propelling your business forward through e-commerce management, web development, and creative marketing.
+            We are a team of digital experts dedicated to propelling your business forward.
           </p>
           <p style="color: var(--text-muted); margin: 0; font-size: 0.8rem; opacity: 0.7;">
             &copy; 2026 eBusiness Helper. All Rights Reserved.
           </p>
         </div>
 
-        <!-- Column 2 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
@@ -261,11 +414,9 @@
             <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
             <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
             <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none;">Support Ticket</a></li>
           </ul>
         </div>
 
-        <!-- Column 3 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
@@ -273,39 +424,25 @@
             <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none;">Amazon FBA</a></li>
             <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none;">Shopify Setup</a></li>
             <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none;">Web Design</a></li>
-            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none;">Marketing</a></li>
           </ul>
         </div>
 
-        <!-- Column 4 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Get in Touch</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
-              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
+              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Lahore</span>
             </li>
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
               <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;">hello@ebusinesshelper.com</a>
             </li>
-            <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
-              <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
-              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;">+92-333-4855-051</a>
-            </li>
           </ul>
-
-          <!-- Social Icons -->
           <div style="display: flex; gap: 12px;">
-            <a href="https://www.facebook.com/eBusinessHelper/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#1877F2'; this.style.borderColor='#1877F2'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/ebusinesshelperofficial/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#d6249f'; this.style.borderColor='#d6249f'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/923234037697" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#25D366'; this.style.borderColor='#25D366'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
+            <a href="https://www.facebook.com/eBusinessHelper/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ebusinesshelperofficial/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/923234037697" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -313,7 +450,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
