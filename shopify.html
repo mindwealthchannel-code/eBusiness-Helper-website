@@ -16,7 +16,7 @@
     /* Custom Layout for Shopify Page */
     .shopify-layout {
       display: grid;
-      grid-template-columns: 2fr 1fr; /* Left side bada, Right side chota */
+      grid-template-columns: 2fr 1fr;
       gap: 50px;
       align-items: start;
       padding-bottom: 60px;
@@ -85,6 +85,54 @@
       padding: 30px;
       border-radius: 0 16px 16px 0;
       margin-bottom: 40px;
+    }
+
+    /* Brand Ticker Styles */
+    .brand-ticker-section {
+      padding: 40px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ticker-wrapper {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 30px;
+      white-space: nowrap;
+      animation: scrollTicker 35s linear infinite;
+      padding-left: 30px;
+    }
+
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    .brand-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @keyframes scrollTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 992px) {
@@ -165,6 +213,38 @@
           </p>
         </div>
 
+        <!-- FAMOUS BRANDS TICKER (Yahan Add Kiya Hai) -->
+        <div class="brand-ticker-section" style="margin-bottom: 40px; border-radius: 16px;">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <p style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Trusted by Industry Leaders & Top Shopify Brands</p>
+          </div>
+          
+          <div class="ticker-wrapper">
+            <div class="ticker-track">
+              
+              <!-- Brand Items -->
+              <div class="brand-item"><i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark</div>
+              <div class="brand-item"><i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova</div>
+              <div class="brand-item"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS</div>
+              <div class="brand-item"><i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics</div>
+              <div class="brand-item"><i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds</div>
+              <div class="brand-item"><i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull</div>
+              <div class="brand-item"><i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla</div>
+
+              <!-- Duplicate for Loop -->
+              <div class="brand-item"><i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark</div>
+              <div class="brand-item"><i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova</div>
+              <div class="brand-item"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS</div>
+              <div class="brand-item"><i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics</div>
+              <div class="brand-item"><i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds</div>
+              <div class="brand-item"><i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull</div>
+              <div class="brand-item"><i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla</div>
+
+            </div>
+          </div>
+        </div>
+        <!-- TICKER END -->
+
         <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Why Choose Our Shopify Services?</h2>
         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
           Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.
@@ -187,64 +267,6 @@
         </p>
 
       </div>
-        <!-- BRAND TICKER SECTION -->
-  <section class="brand-ticker-section" style="padding: 40px 0; background: var(--bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); overflow: hidden; position: relative; z-index: 10;">
-    <div class="container" style="margin-bottom: 20px; text-align: center;">
-      <p style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Trusted by Industry Leaders & Top Shopify Brands</p>
-    </div>
-    
-    <div class="ticker-wrapper" style="display: flex; overflow: hidden;">
-      <div class="ticker-track" style="display: flex; gap: 30px; white-space: nowrap; animation: scrollTicker 35s linear infinite;">
-        
-        <!-- Brand Items -->
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla
-        </div>
-
-        <!-- Duplicate for Loop -->
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull
-        </div>
-        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
-          <i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla
-        </div>
-
-      </div>
-    </div>
-  </section>
 
       <!-- RIGHT COLUMN: Sidebar (Only What We Offer) -->
       <div class="right-sidebar">
