@@ -507,11 +507,11 @@ section { padding: 80px 0; }
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 /* =========================================
-   FINAL FINAL MOBILE FIX (Force Everything)
+   FINAL MOBILE FIX (100% Guaranteed)
    ========================================= */
 @media (max-width: 768px) {
-
-  /* 1. Horizontal Scroll ko zabardasti khatam karein */
+  
+  /* 1. Horizontal Scroll Ko Khatam Karein */
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -519,44 +519,80 @@ section { padding: 80px 0; }
     position: relative !important;
   }
 
-  /* Glow effects ko band karein jo screen phailate hain */
-  .glow-bg {
-    display: none !important; 
-  }
+  .glow-bg { display: none !important; }
 
-  /* 2. Har section aur container ko screen ke andar lock karein */
-  .container, section, .navbar, .footer, .footer-grid {
+  /* 2. Containers */
+  .container, section, .navbar {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
-    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
 
-  /* 3. Footer ka Address Fix (Yeh asal masla hai) */
-  .footer ul li {
-    display: flex !important;
-    flex-direction: column !important; /* Icon aur text alag alag line mein */
-    align-items: center !important;
-    text-align: center !important;
+  /* 3. FOOTER KA ASAL FIX (Force Single Column) */
+  .footer {
+    padding: 40px 0 20px 0 !important;
     width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+
+  .footer-grid > div {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  /* Footer Links ke list items */
+  .footer ul {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .footer ul li {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important; /* Icon aur text alag line mein */
+    align-items: center !important;
     margin-bottom: 15px !important;
   }
-  
+
   .footer ul li i {
     margin-bottom: 5px !important;
-    margin-top: 0 !important;
+    margin-right: 0 !important;
   }
 
-  .footer ul li span, .footer ul li a {
-    white-space: normal !important; /* Address ko line break karne ki ijazat dein */
+  .footer ul li span, 
+  .footer ul li a {
+    white-space: normal !important;
     word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    max-width: 100% !important;
     text-align: center !important;
-    display: block !important;
+    max-width: 100% !important;
     font-size: 0.95rem !important;
+  }
+
+  /* Social Icons Center */
+  .footer .socials {
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
   }
 
   /* 4. Navbar aur Logo */
@@ -564,21 +600,21 @@ section { padding: 80px 0; }
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 10px 15px !important;
+    padding: 10px 0 !important;
   }
-  
+
   .navbar .logo img {
     max-width: 130px !important;
     height: auto !important;
   }
-  
+
   .hamburger {
     display: block !important;
     font-size: 1.8rem !important;
     color: white !important;
     margin-right: 0 !important;
   }
-  
+
   .nav-links {
     display: none;
     flex-direction: column !important;
@@ -588,33 +624,26 @@ section { padding: 80px 0; }
     padding: 20px !important;
     z-index: 1000 !important;
   }
-  
-  .nav-links.active {
-    display: flex !important;
-  }
+
+  .nav-links.active { display: flex !important; }
 
   /* 5. Home Page Cards */
-  .rail-cards-wrapper {
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
+  .rail-heading h1 { font-size: 1.8rem !important; text-align: center !important; }
+  .rail-cards-wrapper { flex-direction: column !important; align-items: center !important; }
+  .rail-card { 
+    width: 100% !important; 
+    max-width: 300px !important; 
+    margin: 0 auto !important; 
+    flex-direction: row !important; 
+    justify-content: center !important; 
   }
 
-  .rail-card {
-    width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 auto !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-  }
-
-  /* 6. Baaki Layouts (Forms & Sidebars) */
+  /* 6. Other Pages Layouts */
   .shopify-layout, .web-layout, .support-layout, .about-layout, .marketing-layout, .content-grid, .contact-grid, .channel-row { 
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     gap: 20px !important;
-    padding: 0 !important;
   }
 
   .right-sidebar, .sidebar {
@@ -627,12 +656,7 @@ section { padding: 80px 0; }
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 15px !important;
   }
 
-  /* 7. Images */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
+  img { max-width: 100% !important; height: auto !important; }
 }
