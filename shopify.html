@@ -13,15 +13,43 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Custom CSS for Shopify Page */
+    /* Custom Layout for Shopify Page */
+    .shopify-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+      align-items: start;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .left-content img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 25px 0;
+      border: 1px solid var(--card-border);
+    }
+
+    .right-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
     .shopify-form-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 24px;
-      padding: 40px;
+      padding: 30px;
       backdrop-filter: blur(10px);
     }
-    .shopify-form-box select, .shopify-form-box input, .shopify-form-box textarea {
+
+    .shopify-form-box select, 
+    .shopify-form-box input, 
+    .shopify-form-box textarea {
       width: 100%;
       padding: 14px;
       background: rgba(0,0,0,0.2);
@@ -29,18 +57,33 @@
       border-radius: 10px;
       color: white;
       font-family: inherit;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
     }
-    .shopify-form-box select:focus, .shopify-form-box input:focus, .shopify-form-box textarea:focus {
+    
+    .shopify-form-box select:focus, 
+    .shopify-form-box input:focus, 
+    .shopify-form-box textarea:focus {
       outline: none;
       border-color: var(--primary);
     }
+
     .seo-box {
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(0, 229, 160, 0.05));
       border-left: 4px solid var(--primary);
       padding: 30px;
       border-radius: 0 16px 16px 0;
-      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .shopify-layout {
+        grid-template-columns: 1fr;
+      }
+      .right-sidebar {
+        position: relative;
+        top: 0;
+      }
     }
   </style>
 </head>
@@ -49,7 +92,9 @@
   <div class="glow-bg glow-1"></div>
   <div class="glow-bg glow-2"></div>
 
-  <!-- NAVBAR -->
+  <!-- =========================================
+       HEADER / NAVBAR
+       ========================================= -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
@@ -62,109 +107,59 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-right">
-        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
         <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
       </div>
     </div>
   </header>
 
+  <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
+  
   <!-- PAGE HEADER -->
-  <section class="page-header" style="padding-top: 160px; padding-bottom: 20px;">
-    <div class="container text-center">
-      <h1 class="page-title">Shopify <span class="gradient-text">Store Development</span></h1>
-      <p class="page-subtitle">Launch, customize, and scale your online store with our expert Shopify solutions.</p>
-    </div>
-  </section>
-
-  <!-- INTRO TEXT -->
-  <section class="calc-intro-text" style="padding: 40px 0 10px;">
-    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
-        Turn your ideas into a <span class="gradient-text">profitable Shopify store.</span>
-      </h2>
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-        Shopify powers millions of businesses worldwide. However, setting it up correctly from day one is crucial. A poorly configured store can lead to abandoned carts and lost revenue.
-      </p>
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
-        <strong>Whether you are entering the market blindly or have a specific brand vision,</strong> we handle the technical side of things so you can focus on selling.
-      </p>
-    </div>
-  </section>
-
-  <!-- ⚡ PROJECT INQUIRY FORM (Replaced Calculator) -->
-  <section class="calculator-section" style="padding: 40px 0 60px;">
+  <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; position: relative; z-index: 10; text-align: center;">
     <div class="container">
-      <div class="shopify-form-box" style="max-width: 800px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Tell Us About Your Project</h2>
-          <p style="color: var(--text-muted);">Fill this out so we can tailor a strategy specifically for your business.</p>
-        </div>
-
-        <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
-          <!-- FormSubmit settings -->
-          <input type="hidden" name="_subject" value="New Shopify Project Inquiry!">
-          <input type="hidden" name="_captcha" value="false">
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div>
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Name</label>
-              <input type="text" name="name" placeholder="John Doe" required>
-            </div>
-            <div>
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Email / WhatsApp</label>
-              <input type="text" name="contact" placeholder="Email or Phone Number" required>
-            </div>
-          </div>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">What is your current business stage?</label>
-          <select name="stage">
-            <option value="blindly">I am entering blindly (Need complete guidance)</option>
-            <option value="specific">I have a specific niche/product in mind</option>
-            <option value="brand">I already have an established brand</option>
-            <option value="dropshipping">I want to start Dropshipping</option>
-          </select>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you also need SEO (Search Engine Optimization)?</label>
-          <select name="seo">
-            <option value="yes">Yes, I want local & international ranking on Google</option>
-            <option value="no">No, just the Shopify store setup for now</option>
-          </select>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Tell us a bit more about your products or vision</label>
-          <textarea name="message" rows="4" placeholder="I want to sell custom jewelry..."></textarea>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
-        </form>
-
-      </div>
+      <h1 class="page-title">Shopify <span class="gradient-text">Store Development</span></h1>
+      <p class="page-subtitle" style="color: var(--text-muted); max-width: 700px; margin: 10px auto 0 auto;">Launch, customize, and scale your online store with our expert Shopify solutions.</p>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
-    <div class="container content-grid">
+  <!-- 2 COLUMN LAYOUT -->
+  <section class="container">
+    <div class="shopify-layout">
       
-      <div class="text-content">
+      <!-- LEFT COLUMN: Text & Info -->
+      <div class="left-content">
         
-        <!-- SEO vs ADS SECTION -->
-        <div class="seo-box" style="margin-top: 0; margin-bottom: 40px;">
-          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> Why Shopify + SEO is Crucial</h3>
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: #ffffff;">
+          Turn your ideas into a <span class="gradient-text">profitable Shopify store.</span>
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+          Shopify powers millions of businesses worldwide. However, setting it up correctly from day one is crucial. A poorly configured store can lead to abandoned carts and lost revenue.
+        </p>
+
+        <!-- SEO vs ADS Section -->
+        <div class="seo-box">
+          <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> Why Shopify + SEO is Crucial</h3>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
-            Many people think running Facebook or Google Ads is enough. <strong>Here is the harsh truth:</strong> Ads only work as long as you keep paying. The moment you stop your ad budget, your sales drop to zero.
+            Many people think running Facebook or Google Ads is enough. <strong>Here is the harsh truth:</strong> Ads only work as long as you keep paying. The moment you stop your ad budget, your sales drop.
           </p>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
-            <strong>SEO (Search Engine Optimization)</strong> is different. Google's algorithm ranks websites based on relevance, user experience, and quality content. When you invest in SEO, your website appears organically when people search for your products. This builds a <strong>permanent online presence</strong> and long-term brand trust, both locally and internationally.
+            <strong>SEO (Search Engine Optimization)</strong> is different. Google's algorithm ranks websites based on relevance, user experience, and content. When you invest in SEO, your website appears organically when people search for your products. This builds a <strong>permanent online presence</strong> and long-term brand trust.
           </p>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 0;">
-            <i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> We build your store with SEO-friendly architecture from day one.
+          <p style="color: var(--accent); font-weight: 600; margin: 0;">
+            <i class="fa-solid fa-circle-check"></i> We build your store with SEO-friendly architecture from day one.
           </p>
         </div>
 
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Why Choose Our Shopify Services?</h2>
-        <p style="color: var(--text-muted); line-height: 1.8;">Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.</p>
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Why Choose Our Shopify Services?</h2>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+          Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.
+        </p>
         
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Ecommerce" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+        <!-- Relevant Image -->
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Store Setup">
 
         <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our End-to-End Process</h2>
         <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
@@ -174,16 +169,18 @@
           <li><strong>App Integration:</strong> Payment gateways, reviews, and email marketing.</li>
         </ul>
 
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Shopify Analytics" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
-
         <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Maximize Your Conversions</h2>
-        <p style="color: var(--text-muted); line-height: 1.8;">Our team of Shopify experts creates user-friendly stores that drive conversions and maximize sales through the latest tools and technologies. We will help you unlock all the potential in Shopify to attain your e-commerce goals.</p>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          Our team of Shopify experts creates user-friendly stores that drive conversions and maximize sales. We will help you unlock all the potential in Shopify to attain your e-commerce goals.
+        </p>
 
       </div>
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
+      <!-- RIGHT COLUMN: Sidebar & Form -->
+      <div class="right-sidebar">
+        
+        <!-- What We Offer (Upar) -->
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
           <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">What We Offer</h3>
           <ul class="platform-list" style="list-style: none; padding: 0;">
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Custom Shopify Themes</li>
@@ -191,15 +188,51 @@
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary); font-size: 1.5rem;"></i> On-Page SEO Setup</li>
             <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-chart-line" style="color: var(--primary); font-size: 1.5rem;"></i> Conversion Rate Optimization</li>
           </ul>
-          <a href="https://wa.me/923234037697" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Chat on WhatsApp</a>
         </div>
+
+        <!-- Tell Us About Your Project (Neeche) -->
+        <div class="shopify-form-box">
+          <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Tell Us About Your Project</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Fill this out so we can tailor a strategy specifically for your business.</p>
+
+          <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
+            <input type="hidden" name="_subject" value="New Shopify Project Inquiry!">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Your Name</label>
+            <input type="text" name="name" placeholder="John Doe" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Email / WhatsApp</label>
+            <input type="text" name="contact" placeholder="Email or Phone Number" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Business Stage?</label>
+            <select name="stage">
+              <option value="blindly">Entering blindly (Need guidance)</option>
+              <option value="specific">I have a specific product</option>
+              <option value="brand">I have an established brand</option>
+              <option value="dropshipping">I want to Dropship</option>
+            </select>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Do you need SEO?</label>
+            <select name="seo">
+              <option value="yes">Yes, I want Google ranking</option>
+              <option value="no">No, just the store setup</option>
+            </select>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Message</label>
+            <textarea name="message" rows="3" placeholder="Tell us about your products..."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 1rem;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- CONTACT CTA -->
-  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Ready to launch your Shopify store?</h2>
       <p style="color: var(--text-muted); margin-bottom: 30px;">Let's build a store that not only looks great but dominates Google search results.</p>
@@ -207,18 +240,91 @@
     </div>
   </section>
 
-  <!-- FOOTER (Same as your other pages) -->
-  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border);">
-    <!-- Aapka Footer Code (Waisa hi rahega, maine ise chota kar diya hai taake copy karna asaan ho) -->
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
-        <!-- Col 1, 2, 3, 4 ... (Aapka purana footer code yahan aayega) -->
+        
+        <!-- Column 1 -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 15px;">
+            <img src="logo.png" alt="eBusiness Helper Logo" style="height: 55px; width: auto; object-fit: contain;">
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+            We are a team of digital experts dedicated to propelling your business forward through e-commerce management, web development, and creative marketing.
+          </p>
+          <p style="color: var(--text-muted); margin: 0; font-size: 0.8rem; opacity: 0.7;">
+            &copy; 2026 eBusiness Helper. All Rights Reserved.
+          </p>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
+            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a></li>
+            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
+            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
+            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Support Ticket</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">E-Commerce</a></li>
+            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Amazon FBA</a></li>
+            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Shopify Setup</a></li>
+            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Web Design</a></li>
+            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Marketing</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Get in Touch</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+            <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
+              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
+            </li>
+            <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
+              <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">hello@ebusinesshelper.com</a>
+            </li>
+            <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
+              <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
+              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">+92-333-4855-051</a>
+            </li>
+          </ul>
+
+          <!-- Social Icons -->
+          <div style="display: flex; gap: 12px;">
+            <a href="https://www.facebook.com/eBusinessHelper/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#1877F2'; this.style.borderColor='#1877F2'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/ebusinesshelperofficial/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#d6249f'; this.style.borderColor='#d6249f'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/923234037697" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#25D366'; this.style.borderColor='#25D366'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </footer>
 
+  <!-- =========================================
+       JAVASCRIPT
+       ========================================= -->
+  <script src="script.js"></script>
   <script>
-    // Mobile Menu Toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if (hamburger) {
