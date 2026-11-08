@@ -16,10 +16,10 @@
     /* Custom Layout for Shopify Page */
     .shopify-layout {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 2fr 1fr; /* Left side bada, Right side chota */
       gap: 50px;
       align-items: start;
-      padding-bottom: 80px;
+      padding-bottom: 60px;
       position: relative;
       z-index: 10;
     }
@@ -35,31 +35,40 @@
     .right-sidebar {
       position: sticky;
       top: 100px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    }
+
+    /* Full Width Form Section */
+    .full-width-form-section {
+      background: var(--bg-2);
+      border-top: 1px solid var(--card-border);
+      padding: 80px 0;
+      position: relative;
+      z-index: 10;
     }
 
     .shopify-form-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 24px;
-      padding: 30px;
+      padding: 50px;
+      max-width: 900px;
+      margin: 0 auto;
       backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
     .shopify-form-box select, 
     .shopify-form-box input, 
     .shopify-form-box textarea {
       width: 100%;
-      padding: 14px;
+      padding: 15px;
       background: rgba(0,0,0,0.2);
       border: 1px solid var(--card-border);
       border-radius: 10px;
       color: white;
       font-family: inherit;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
+      margin-bottom: 20px;
+      font-size: 1rem;
     }
     
     .shopify-form-box select:focus, 
@@ -67,6 +76,7 @@
     .shopify-form-box textarea:focus {
       outline: none;
       border-color: var(--primary);
+      background: rgba(0,0,0,0.4);
     }
 
     .seo-box {
@@ -77,30 +87,6 @@
       margin-bottom: 40px;
     }
 
-    /* Brand Logos Section */
-    .brand-logos-container {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0.6;
-      filter: grayscale(100%);
-      transition: 0.3s;
-      padding: 40px 0;
-    }
-    
-    .brand-logos-container:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
-
-    .brand-logos-container img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-
     @media (max-width: 992px) {
       .shopify-layout {
         grid-template-columns: 1fr;
@@ -108,6 +94,9 @@
       .right-sidebar {
         position: relative;
         top: 0;
+      }
+      .shopify-form-box {
+        padding: 30px;
       }
     }
   </style>
@@ -181,7 +170,7 @@
           Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.
         </p>
         
-        <!-- NEW PROFESSIONAL IMAGE -->
+        <!-- Relevant Image -->
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Shopify Store Setup & Analytics">
 
         <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 40px; margin-bottom: 15px;">Our End-to-End Process</h2>
@@ -192,26 +181,74 @@
           <li><strong>App Integration:</strong> Payment gateways, reviews, and email marketing.</li>
         </ul>
 
-        <!-- BRAND BUILDING SECTION (Jin brands ko banaya hai) -->
-        <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 16px; border: 1px solid var(--card-border); margin-top: 30px;">
-          <h3 style="color: #ffffff; font-size: 1.4rem; margin-bottom: 10px; font-weight: 700;">Brands We Have Built</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">From scratch to thriving e-commerce businesses. Here are some of the brands we've successfully launched on Shopify.</p>
-          
-          <div class="brand-logos-container">
-            <!-- Yahan aap apne clients ke logo lagayein. Filhal maine kuch example logos lagaye hain -->
-            <i class="fa-brands fa-shopify" style="font-size: 3rem; color: #96bf48;"></i>
-            <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">BRAND A</span>
-            <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">BRAND B</span>
-            <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: #f59e0b;"></i>
-          </div>
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Maximize Your Conversions</h2>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          Our team of Shopify experts creates user-friendly stores that drive conversions and maximize sales. We will help you unlock all the potential in Shopify to attain your e-commerce goals.
+        </p>
+
+      </div>
+        <!-- BRAND TICKER SECTION -->
+  <section class="brand-ticker-section" style="padding: 40px 0; background: var(--bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); overflow: hidden; position: relative; z-index: 10;">
+    <div class="container" style="margin-bottom: 20px; text-align: center;">
+      <p style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Trusted by Industry Leaders & Top Shopify Brands</p>
+    </div>
+    
+    <div class="ticker-wrapper" style="display: flex; overflow: hidden;">
+      <div class="ticker-track" style="display: flex; gap: 30px; white-space: nowrap; animation: scrollTicker 35s linear infinite;">
+        
+        <!-- Brand Items -->
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla
+        </div>
+
+        <!-- Duplicate for Loop -->
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> Kylie Cosmetics
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-shoe-prints" style="color: #10b981;"></i> Allbirds
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull
+        </div>
+        <div class="ticker-item" style="display: inline-flex; align-items: center; gap: 12px; background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 25px; border-radius: 50px; color: var(--text); font-weight: 600; font-size: 1rem;">
+          <i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <!-- RIGHT COLUMN: Sidebar & Form -->
+      <!-- RIGHT COLUMN: Sidebar (Only What We Offer) -->
       <div class="right-sidebar">
         
-        <!-- What We Offer (Upar) -->
         <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
           <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">What We Offer</h3>
           <ul class="platform-list" style="list-style: none; padding: 0;">
@@ -224,42 +261,7 @@
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-store" style="color: var(--primary); font-size: 1.2rem;"></i> Overall Store Handling</li>
             <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-headset" style="color: var(--primary); font-size: 1.2rem;"></i> Dedicated Customer Support</li>
           </ul>
-        </div>
-
-        <!-- Tell Us About Your Project (Neeche) -->
-        <div class="shopify-form-box">
-          <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Tell Us About Your Project</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Fill this out so we can tailor a strategy specifically for your business.</p>
-
-          <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
-            <input type="hidden" name="_subject" value="New Shopify Project Inquiry!">
-            <input type="hidden" name="_captcha" value="false">
-
-            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Your Name</label>
-            <input type="text" name="name" placeholder="John Doe" required>
-
-            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Email / WhatsApp</label>
-            <input type="text" name="contact" placeholder="Email or Phone Number" required>
-
-            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Business Stage?</label>
-            <select name="stage">
-              <option value="blindly">Entering blindly (Need guidance)</option>
-              <option value="specific">I have a specific product</option>
-              <option value="brand">I have an established brand</option>
-              <option value="dropshipping">I want to Dropship</option>
-            </select>
-
-            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Do you need SEO?</label>
-            <select name="seo">
-              <option value="yes">Yes, I want Google ranking</option>
-              <option value="no">No, just the store setup</option>
-            </select>
-
-            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Message</label>
-            <textarea name="message" rows="3" placeholder="Tell us about your products..."></textarea>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 1rem;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+          <a href="https://wa.me/923234037697" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 25px;">Chat on WhatsApp</a>
         </div>
 
       </div>
@@ -267,8 +269,64 @@
     </div>
   </section>
 
+  <!-- =========================================
+       FULL WIDTH FORM SECTION (Bottom)
+       ========================================= -->
+  <section class="full-width-form-section">
+    <div class="container">
+      <div class="shopify-form-box">
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Tell Us About Your Project</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">Fill this out so we can tailor a strategy specifically for your business.</p>
+        </div>
+
+        <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
+          <input type="hidden" name="_subject" value="New Shopify Project Inquiry!">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required>
+            </div>
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Email / WhatsApp</label>
+              <input type="text" name="contact" placeholder="Email or Phone Number" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Business Stage?</label>
+              <select name="stage">
+                <option value="blindly">Entering blindly (Need guidance)</option>
+                <option value="specific">I have a specific product</option>
+                <option value="brand">I have an established brand</option>
+                <option value="dropshipping">I want to Dropship</option>
+              </select>
+            </div>
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you need SEO?</label>
+              <select name="seo">
+                <option value="yes">Yes, I want Google ranking</option>
+                <option value="no">No, just the store setup</option>
+              </select>
+            </div>
+          </div>
+
+          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Message / Tell us about your products</label>
+          <textarea name="message" rows="4" placeholder="I want to sell custom jewelry..."></textarea>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.1rem; margin-top: 10px;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
   <!-- READY TO LAUNCH CTA -->
-  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Ready to launch your Shopify store?</h2>
       <p style="color: var(--text-muted); margin-bottom: 30px;">Let's build a store that not only looks great but dominates Google search results.</p>
