@@ -526,14 +526,25 @@ section { padding: 80px 0; }
     margin: 0 auto !important;
   }
 
-  /* 3. Home Page ke Cards (Rail) ko theek karein */
+  /* 3. Navbar aur Logo Fix */
+  .nav-container {
+    padding: 10px 15px !important;
+  }
+  .navbar .logo img {
+    max-width: 160px !important; /* Logo screen se bahar nahi jayega */
+    height: auto !important;
+    max-height: 40px !important;
+    object-fit: contain !important;
+  }
+
+  /* 4. Home Page ke Cards (Rail) */
   .rail-container {
     padding: 0 !important;
     overflow: visible !important;
   }
   
   .rail-cards-wrapper {
-    flex-direction: column !important; /* Cards ko ek ke neeche ek karein */
+    flex-direction: column !important;
     align-items: center !important;
     gap: 15px !important;
     width: 100% !important;
@@ -542,19 +553,18 @@ section { padding: 80px 0; }
 
   .rail-card {
     width: 100% !important;
-    max-width: 350px !important; /* Card ki chaurai fix ki */
+    max-width: 320px !important;
     margin: 0 auto !important;
     padding: 20px !important;
     height: auto !important;
     min-height: 80px !important;
     flex-direction: row !important;
     justify-content: center !important;
-    transform: none !important; /* Desktop ke transforms hatayein */
+    transform: none !important;
   }
 
-  /* 4. Title aur Text ko center karein */
   .rail-heading h1 {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
     text-align: center !important;
     padding: 0 10px !important;
     word-wrap: break-word !important;
@@ -562,10 +572,10 @@ section { padding: 80px 0; }
   
   .rail-heading p {
     text-align: center !important;
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
   }
 
-  /* 5. Baaki 2-Column pages (Shopify, Amazon, About) ko ek column karein */
+  /* 5. Baaki 2-Column pages (Shopify, Amazon, About) */
   .shopify-layout, 
   .web-layout, 
   .support-layout, 
@@ -580,14 +590,14 @@ section { padding: 80px 0; }
     padding: 0 !important;
   }
 
-  /* 6. Sidebars/Forms ko full width karein */
+  /* 6. Sidebars/Forms */
   .right-sidebar, .sidebar {
     width: 100% !important;
     position: relative !important;
     top: 0 !important;
   }
 
-  /* 7. Grids ko single column karein */
+  /* 7. Grids (Services page, etc.) */
   .pro-services-grid, 
   .bento-grid, 
   .models-grid,
@@ -599,7 +609,7 @@ section { padding: 80px 0; }
     gap: 20px !important;
   }
 
-  /* 8. Images ko screen ke andar rakhein */
+  /* 8. Images */
   img {
     max-width: 100% !important;
     height: auto !important;
@@ -623,5 +633,7 @@ section { padding: 80px 0; }
   }
   .hamburger {
     display: block !important;
+  }
+}
   }
 }
