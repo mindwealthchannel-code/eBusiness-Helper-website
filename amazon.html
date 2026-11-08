@@ -10,6 +10,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    /* Page Specific Layout */
+    .amazon-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr; /* Left side bada, Right side chota */
+      gap: 50px;
+      align-items: start;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .left-content h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .left-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* Services List */
+    .service-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .service-list li i {
+      color: var(--accent);
+      margin-top: 5px;
+    }
+
+    /* Sticky Calculator */
+    .sticky-calculator {
+      position: sticky;
+      top: 100px;
+    }
+
+    /* Model Boxes */
+    .model-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .model-box h3 {
+      color: #ffffff;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      margin-top: 0 !important;
+    }
+
+    /* Warning / Stuck Box */
+    .stuck-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(245, 158, 11, 0.05));
+      border-left: 4px solid #ef4444;
+      padding: 30px;
+      border-radius: 0 16px 16px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .amazon-layout {
+        grid-template-columns: 1fr;
+      }
+      .sticky-calculator {
+        position: relative;
+        top: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -25,258 +119,214 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-right">
-        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
         <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
       </div>
     </div>
   </header>
 
   <!-- PAGE HEADER -->
-  <section class="page-header" style="padding-top: 160px; style="padding-bottom: 20px;">
+  <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; text-align: center; position: relative; z-index: 10;">
     <div class="container">
-      <h1 class="page-title">Amazon <span class="gradient-text">FBA/FBM Solutions</span></h1>
-      <p class="page-subtitle">Empowering your e-commerce success across the US, UK, and Europe markets.</p>
-    </div>
-  </section>
-    <!-- PROFESSIONAL INTRO TEXT -->
-  <section class="calc-intro-text" style="padding: 40px 0 10px;">
-    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
-      
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
-        Smart sellers calculate before they <span class="gradient-text">invest.</span>
-      </h2>
-      
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-        Whether you are an experienced Amazon seller or just starting out, knowing your numbers is the key to success. Every dollar counts when you're paying for product costs, shipping, and Amazon fees. 
-      </p>
-      
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
-        <strong>Don't launch blindly.</strong> Even if you're still figuring out your business model, running the numbers beforehand helps you set the right price, avoid losses, and secure your profit margins from day one.
-      </p>
-
-      <div style="display: inline-block; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); padding: 12px 24px; border-radius: 50px; color: var(--primary); font-weight: 600;">
-        <i class="fa-solid fa-arrow-down"></i> Try our free calculator below
-      </div>
-
+      <h1 class="page-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 15px;">Amazon <span class="gradient-text">FBA/FBM Solutions</span></h1>
+      <p class="page-subtitle" style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Empowering your e-commerce success across the US, UK, and Europe markets.</p>
     </div>
   </section>
 
-    <!-- ⚡ PROFESSIONAL AMAZON CALCULATOR -->
-  <section class="calculator-section" style="padding: 40px 0 60px;">
-    <div class="container">
-      <div class="calculator-box glass-panel" style="max-width: 900px; margin: 0 auto; padding: 40px; border-radius: 24px;">
+  <!-- MAIN LAYOUT -->
+  <section class="container">
+    <div class="amazon-layout">
+      
+      <!-- LEFT COLUMN: Services & Details -->
+      <div class="left-content">
         
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Amazon Seller Fee Calculator</h2>
-          <p style="color: var(--text-muted);">Calculate your net profit from Amazon sales. Select your market below.</p>
-          
-          <!-- Currency Toggle -->
-          <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
-            <button class="currency-btn active" onclick="switchCurrency('£', 'UK')" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--primary); background: var(--primary); color: white; cursor: pointer;">🇬🇧 UK (£)</button>
-            <button class="currency-btn" onclick="switchCurrency('$', 'US')" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--card-border); background: transparent; color: white; cursor: pointer;">🇺🇸 US ($)</button>
-          </div>
+        <h2>What We Do</h2>
+        <p>We provide end-to-end Amazon store management tailored to your budget. From finding the right product to delivering it to the customer, we handle everything so you can focus on growing.</p>
+        
+        <!-- Services List -->
+        <ul class="service-list">
+          <li><i class="fa-solid fa-check-circle"></i> Product Hunting & Research</li>
+          <li><i class="fa-solid fa-check-circle"></i> Sourcing & Supplier Management</li>
+          <li><i class="fa-solid fa-check-circle"></i> Listing Optimization (SEO)</li>
+          <li><i class="fa-solid fa-check-circle"></i> Professional Product Design</li>
+          <li><i class="fa-solid fa-check-circle"></i> Shipment Planning & Forwarding</li>
+          <li><i class="fa-solid fa-check-circle"></i> 3PL Services for Labeling (FBA Prep)</li>
+          <li><i class="fa-solid fa-check-circle"></i> PPC Ads Management</li>
+          <li><i class="fa-solid fa-check-circle"></i> Customer Support & After-Sale</li>
+          <li><i class="fa-solid fa-check-circle"></i> Monthly Sales & Profit Reports</li>
+        </ul>
+
+        <h2>Amazon FBA vs FBM (What's the difference?)</h2>
+        <p>Understanding how your products are delivered is crucial for your profit margins.</p>
+        
+        <div class="model-box">
+          <h3><i class="fa-brands fa-amazon" style="color: #ff9900;"></i> FBA (Fulfillment by Amazon)</h3>
+          <p style="margin-bottom: 0;">You send your inventory to Amazon's warehouses. Amazon handles storage, packing, shipping, and customer service. It's faster and Prime-eligible, but comes with storage and fulfillment fees.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left;">
-          
-          <!-- LEFT SIDE: INPUTS -->
-          <div>
-            <!-- Selling Information -->
-            <h3 style="color: white; font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Selling Information</h3>
-            
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Item Price (<span class="curr-symbol">£</span>)</label>
-              <input type="number" id="itemPrice" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
-            </div>
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Shipping Charge (<span class="curr-symbol">£</span>)</label>
-              <input type="number" id="shipCharge" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
-            </div>
+        <div class="model-box">
+          <h3><i class="fa-solid fa-box" style="color: var(--primary);"></i> FBM (Fulfillment by Merchant)</h3>
+          <p style="margin-bottom: 0;">You store the inventory yourself (or in a 3PL) and ship it directly to the customer when they order. You save on Amazon's storage fees but have to manage logistics and customer service yourself.</p>
+        </div>
 
-            <!-- Costs -->
-            <h3 style="color: white; font-size: 1.2rem; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Costs</h3>
+        <h2>Business Models We Handle</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; line-height: 1.8; margin-bottom: 30px;">
+          <li><strong>Private Label:</strong> We help you create your own brand, source it from manufacturers, and launch it as a unique product.</li>
+          <li><strong>Wholesale:</strong> Sourcing established brands from distributors and selling them in bulk to maximize margins.</li>
+          <li><strong>Online Arbitrage:</strong> Buying discounted products from retail stores and selling them on Amazon for a profit.</li>
+        </ul>
+
+        <!-- STUCK / SCALING SECTION -->
+        <div class="stuck-box">
+          <h2 style="color: #ef4444; margin-top: 0; font-size: 1.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> Stuck at a Point? Not Scaling?</h2>
+          <p>Are you already selling on Amazon but your sales have plateaued? Or are your profits shrinking due to high PPC costs and poor listing optimization?</p>
+          <p>Many sellers hit a ceiling because they lack the right data or strategy. We analyze your existing store, fix your keyword targeting, optimize your PPC campaigns, and rebuild your listings to outrank competitors and <strong>unlock the next level of growth.</strong></p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Calculator & Sidebar -->
+      <div class="sticky-calculator">
+        
+        <!-- Calculator Box -->
+        <div class="glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; border: 1px solid var(--card-border);">
+          
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 5px;">Profit Calculator</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Check your estimated profit per sale.</p>
             
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Item Cost (<span class="curr-symbol">£</span>)</label>
-              <input type="number" id="itemCost" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
-            </div>
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Shipping Cost (<span class="curr-symbol">£</span>)</label>
-              <input type="number" id="shipCost" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
-            </div>
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Referral Fee (%)</label>
-              <input type="number" id="refFee" placeholder="15" value="15" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
-            </div>
-            <div class="input-group" style="margin-bottom: 15px;">
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">FBA / Fulfillment Fee (<span class="curr-symbol">£</span>)</label>
-              <input type="number" id="fbaFee" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+            <!-- Currency Toggle -->
+            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+              <button class="currency-btn active" onclick="switchCurrency('£', 'UK')" style="padding: 6px 14px; border-radius: 6px; border: 1px solid var(--primary); background: var(--primary); color: white; cursor: pointer; font-size: 0.85rem;">UK (£)</button>
+              <button class="currency-btn" onclick="switchCurrency('$', 'US')" style="padding: 6px 14px; border-radius: 6px; border: 1px solid var(--card-border); background: transparent; color: white; cursor: pointer; font-size: 0.85rem;">US ($)</button>
             </div>
           </div>
 
-          <!-- RIGHT SIDE: RESULTS -->
-          <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 16px; border: 1px solid var(--card-border);">
-            <h3 style="color: white; font-size: 1.2rem; margin-bottom: 20px;">Summary</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
             
-            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; color: var(--text-muted);">
-              <span>Total Revenue:</span>
-              <span id="resRevenue" style="color: white; font-weight: 600;"><span class="curr-symbol">£</span>0.00</span>
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 3px; display: block;">Item Price (<span class="curr-symbol">£</span>)</label>
+              <input type="number" id="itemPrice" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
             </div>
             
-            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; color: var(--text-muted);">
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 3px; display: block;">Item Cost (<span class="curr-symbol">£</span>)</label>
+              <input type="number" id="itemCost" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+            </div>
+
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 3px; display: block;">Shipping Cost (<span class="curr-symbol">£</span>)</label>
+              <input type="number" id="shipCost" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+            </div>
+
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 3px; display: block;">Referral Fee (%)</label>
+              <input type="number" id="refFee" placeholder="15" value="15" oninput="calcAmazon()" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+            </div>
+
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 3px; display: block;">FBA Fee (<span class="curr-symbol">£</span>)</label>
+              <input type="number" id="fbaFee" placeholder="0.00" oninput="calcAmazon()" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white;">
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--card-border); margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem;">
               <span>Total Costs:</span>
               <span id="resCosts" style="color: #ef4444; font-weight: 600;"><span class="curr-symbol">£</span>0.00</span>
             </div>
             
-            <div style="border-top: 1px dashed var(--card-border); margin: 15px 0;"></div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span style="color: white; font-size: 1.1rem; font-weight: 600;">Total Profit:</span>
-              <span id="resProfit" style="color: var(--accent); font-size: 1.8rem; font-weight: 800;"><span class="curr-symbol">£</span>0.00</span>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="color: var(--text-muted);">Profit Margin:</span>
-              <span id="resMargin" style="color: var(--accent); font-weight: 700;">0%</span>
-            </div>
-            
-            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--card-border); font-size: 0.85rem; color: var(--text-muted);">
-              <p><i class="fa-solid fa-circle-info"></i> Referral fee includes digital services tax where applicable.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--card-border); padding-top: 10px;">
+              <span style="color: white; font-weight: 600;">Net Profit:</span>
+              <span id="resProfit" style="color: var(--accent); font-size: 1.4rem; font-weight: 800;"><span class="curr-symbol">£</span>0.00</span>
             </div>
           </div>
 
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- MAIN CONTENT AREA -->
-  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
-    <div class="container content-grid">
-      
-      <div class="text-content">
-        
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Why Choose Us for Amazon?</h2>
-        <p>Services from us for Amazon will enable you to move your business forward across the largest online marketplace in the world. From product listing optimization and keyword research to paid ads management and inventory optimization, we propose a strategy tailored to enhance your visibility, boost sales, and unlock more profitability.</p>
-        
-        <!-- Picture 1: Amazon Delivery/Boxes -->
-        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=800&auto=format&fit=crop" alt="Amazon FBA" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
-
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Business Models We Handle</h2>
-        <p>We have hands-on experience working across multiple Amazon business models to ensure your success:</p>
-        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
-          <li><strong>FBA / FBM:</strong> Seamless Fulfillment by Amazon and Fulfillment by Merchant setups.</li>
-          <li><strong>Private Label:</strong> Building your own brand from scratch, sourcing, and branding.</li>
-          <li><strong>Wholesale:</strong> Sourcing from distributors and selling in bulk to maximize margins.</li>
-        </ul>
-
-        <!-- Picture 2: Global Markets / UK US Europe -->
-        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=800&auto=format&fit=crop" alt="Global Markets" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
-
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Global Market Expertise</h2>
-        <p>We have successfully scaled stores in top-tier e-commerce markets. Whether you are targeting the <strong>UK, US, or Europe</strong>, our tailored strategies align perfectly with the regional audience behaviors. We handle the complexities of local taxes, shipping, and compliance so you don't have to.</p>
-
-        <!-- Picture 3: Strategy/Analysis -->
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Amazon Strategy" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
-
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Want to see our work?</h2>
-        <p>Trust us to take your e-commerce skills to new heights and to open up new possibilities of selling on Amazon. If you want to see case studies of our past work or need custom details, simply reach out to us.</p>
-
-      </div>
-
-      <!-- Right Side: Sidebar -->
-      <div class="sidebar">
-        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
-          <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Ready to Scale?</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Ready to take your Amazon brand to the next level in the UK, US, or Europe markets? Let's discuss how we can help.</p>
-          <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 15px;">Contact Us Now</a>
-          <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">We'll get back to you within 24 hours.</p>
+        <!-- Sidebar Contact Box -->
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Ready to Scale?</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Let's discuss how we can help you dominate the Amazon marketplace.</p>
+          <a href="https://wa.me/923234037697" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Chat on WhatsApp</a>
         </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- CONTACT CTA -->
-  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Have a Project For Us?</h2>
       <p style="color: var(--text-muted); margin-bottom: 30px;">Ready to bring your vision to life? Contact us today to discuss how we can help you achieve your goals.</p>
-      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Contact Us Today <i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Email Us Today <i class="fa-solid fa-envelope"></i></a>
     </div>
   </section>
 
-      <!-- PREMIUM FOOTER (FIXED ALIGNMENT) -->
-  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); margin-top: 60px;">
+  <!-- FOOTER -->
+  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
-      
-      <!-- Top Section: 4 Columns -->
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
         
-        <!-- Column 1: About Company + Copyright -->
+        <!-- Column 1 -->
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-          
           <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 15px;">
             <img src="logo.png" alt="eBusiness Helper Logo" style="height: 55px; width: auto; object-fit: contain;">
           </a>
-          
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
             We are a team of digital experts dedicated to propelling your business forward through e-commerce management, web development, and creative marketing.
           </p>
-
-          <!-- Copyright (Ab yeh text ke theek neeche hai, bina kisi extra gap ke) -->
           <p style="color: var(--text-muted); margin: 0; font-size: 0.8rem; opacity: 0.7;">
             &copy; 2026 eBusiness Helper. All Rights Reserved.
           </p>
-          
         </div>
 
-        <!-- Column 2: Quick Links -->
+        <!-- Column 2 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a></li>
-            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Support Ticket</a></li>
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
+            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
+            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none;">Support Ticket</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Our Services -->
+        <!-- Column 3 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">E-Commerce</a></li>
-            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Amazon FBA</a></li>
-            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Shopify Setup</a></li>
-            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Web Design</a></li>
-            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Marketing</a></li>
+            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none;">E-Commerce</a></li>
+            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none;">Amazon FBA</a></li>
+            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none;">Shopify Setup</a></li>
+            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none;">Web Design</a></li>
+            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none;">Marketing</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact Info + Social Icons -->
+        <!-- Column 4 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Get in Touch</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
               <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
-              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">hello@ebusinesshelper.com</a>
+              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;">hello@ebusinesshelper.com</a>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
-              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">+92-333-4855-051</a>
+              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;">+92-333-4855-051</a>
             </li>
           </ul>
 
@@ -292,27 +342,23 @@
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
-
         </div>
 
       </div>
     </div>
   </footer>
 
-    <!-- JavaScript for Calculator -->
+  <!-- JAVASCRIPT -->
   <script>
     let currentSymbol = '£';
 
-    // Market Change Function (UK/US)
     function switchCurrency(symbol, region) {
       currentSymbol = symbol;
       
-      // Saare £ ya $ ke nishanat change karein
       document.querySelectorAll('.curr-symbol').forEach(el => {
         el.innerText = symbol;
       });
 
-      // Buttons ka color change karein
       const buttons = document.querySelectorAll('.currency-btn');
       buttons.forEach(btn => {
         btn.style.background = 'transparent';
@@ -327,56 +373,37 @@
         buttons[1].style.borderColor = 'var(--primary)';
       }
 
-      calcAmazon(); // Hisab dobara chalayein
+      calcAmazon();
     }
 
-    // Main Calculation Function
     function calcAmazon() {
-      // Inputs se values lena (agar khali ho toh 0)
       const price = parseFloat(document.getElementById('itemPrice').value) || 0;
-      const shipCharge = parseFloat(document.getElementById('shipCharge').value) || 0;
       const itemCost = parseFloat(document.getElementById('itemCost').value) || 0;
       const shipCost = parseFloat(document.getElementById('shipCost').value) || 0;
       const refFeePercent = parseFloat(document.getElementById('refFee').value) || 0;
       const fbaFee = parseFloat(document.getElementById('fbaFee').value) || 0;
 
-      // Hisab
-      const totalRevenue = price + shipCharge;
+      const totalRevenue = price;
       const referralFeeAmount = totalRevenue * (refFeePercent / 100);
       const totalCosts = itemCost + shipCost + referralFeeAmount + fbaFee;
       const profit = totalRevenue - totalCosts;
-      
-      let margin = 0;
-      if (totalRevenue > 0) {
-        margin = (profit / totalRevenue) * 100;
-      }
 
-      // Screen par result update karein
-      document.getElementById('resRevenue').innerHTML = `${currentSymbol}${totalRevenue.toFixed(2)}`;
       document.getElementById('resCosts').innerHTML = `${currentSymbol}${totalCosts.toFixed(2)}`;
       
       const profitEl = document.getElementById('resProfit');
-      const marginEl = document.getElementById('resMargin');
-
       profitEl.innerHTML = `${currentSymbol}${profit.toFixed(2)}`;
-      marginEl.innerText = `${margin.toFixed(1)}%`;
 
-      // Color Change (Loss = Red, Profit = Green)
       if (profit < 0) {
         profitEl.style.color = '#ef4444';
-        marginEl.style.color = '#ef4444';
       } else {
         profitEl.style.color = 'var(--accent)';
-        marginEl.style.color = 'var(--accent)';
       }
     }
 
-    // Page load hote hi hisab chala dein
     window.onload = function() {
       calcAmazon();
     };
 
-    // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if (hamburger) {
