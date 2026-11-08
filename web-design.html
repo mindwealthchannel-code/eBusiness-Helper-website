@@ -13,15 +13,64 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Custom CSS for Form */
+    /* Professional 2-Column Layout */
+    .web-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr; /* Left side bada, Right side chota */
+      gap: 50px;
+      align-items: start;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .left-content h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .left-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* Single Relevant Image */
+    .left-content img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 30px 0;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Right Sidebar Sticky */
+    .right-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Form Styling */
     .web-form-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 24px;
-      padding: 40px;
+      padding: 30px;
       backdrop-filter: blur(10px);
     }
-    .web-form-box select, .web-form-box input, .web-form-box textarea {
+    
+    .web-form-box select, 
+    .web-form-box input, 
+    .web-form-box textarea {
       width: 100%;
       padding: 14px;
       background: rgba(0,0,0,0.2);
@@ -29,13 +78,26 @@
       border-radius: 10px;
       color: white;
       font-family: inherit;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-size: 0.95rem;
     }
-    .web-form-box select:focus, .web-form-box input:focus, .web-form-box textarea:focus {
+    
+    .web-form-box select:focus, 
+    .web-form-box input:focus, 
+    .web-form-box textarea:focus {
       outline: none;
       border-color: var(--primary);
       background: rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 992px) {
+      .web-layout {
+        grid-template-columns: 1fr;
+      }
+      .right-sidebar {
+        position: relative;
+        top: 0;
+      }
     }
   </style>
 </head>
@@ -71,118 +133,91 @@
     </div>
   </section>
 
-  <!-- INTRO TEXT -->
-  <section class="calc-intro-text" style="padding: 40px 0 10px;">
-    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
-        Your website is your <span class="gradient-text">24/7 Salesperson.</span>
-      </h2>
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-        In today's digital age, a slow, outdated, or poorly designed website can cost you thousands of dollars in lost sales. Your online store represents your brand's credibility. If it doesn't look premium and load within seconds, customers will bounce.
-      </p>
-      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
-        <strong>Whether you need a simple landing page or a complex e-commerce store,</strong> we design with a purpose—to convert. We focus on clean UI/UX, fast loading speeds, and mobile responsiveness so you never lose a client due to technical issues.
-      </p>
-    </div>
-  </section>
-
-  <!-- ⚡ PROJECT INQUIRY FORM (Replaced Calculator) -->
-  <section class="calculator-section" style="padding: 40px 0 60px;">
-    <div class="container">
-      <div class="web-form-box" style="max-width: 800px; margin: 0 auto;">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Tell Us Your Requirements</h2>
-          <p style="color: var(--text-muted);">Let us know what you are looking for, and we will get back to you with a custom plan.</p>
-        </div>
-
-        <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
-          <!-- FormSubmit settings -->
-          <input type="hidden" name="_subject" value="New Website Design Inquiry!">
-          <input type="hidden" name="_captcha" value="false">
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div>
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Name</label>
-              <input type="text" name="name" placeholder="John Doe" required>
-            </div>
-            <div>
-              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Email / WhatsApp</label>
-              <input type="text" name="contact" placeholder="Email or Phone Number" required>
-            </div>
-          </div>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">What type of website do you need?</label>
-          <select name="website_type">
-            <option value="landing_page">Basic Landing Page (1-3 Pages)</option>
-            <option value="business">Business Website (Corporate/Portfolio)</option>
-            <option value="ecommerce">E-Commerce Store (Shopify/WooCommerce)</option>
-            <option value="custom">Custom Web App (React/Next.js)</option>
-            <option value="redesign">Redesign existing website</option>
-          </select>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you have your content ready?</label>
-          <select name="content_ready">
-            <option value="yes">Yes, I have text and images ready</option>
-            <option value="no">No, I need content writing and design</option>
-            <option value="partial">I have some content, need help with the rest</option>
-          </select>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you have a Logo and Branding?</label>
-          <select name="branding">
-            <option value="yes">Yes, I have a logo and brand colors</option>
-            <option value="no">No, I need a logo and branding as well</option>
-          </select>
-
-          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Tell us about your demand/vision</label>
-          <textarea name="message" rows="4" placeholder="I want a website for my real estate business..."></textarea>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Requirements <i class="fa-solid fa-paper-plane"></i></button>
-        </form>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <section class="service-page-content" style="padding-top: 20px; padding-bottom: 80px;">
-    <div class="container content-grid">
+  <!-- MAIN 2-COLUMN LAYOUT -->
+  <section class="container">
+    <div class="web-layout">
       
-      <div class="text-content">
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 15px;">Why Your Web Design Matters</h2>
-        <p>Your website is often the first interaction a customer has with your brand. A professionally designed website builds trust instantly, while a poorly designed one drives potential customers straight to your competitors. We craft websites that look beautiful and function flawlessly.</p>
+      <!-- LEFT COLUMN: Details -->
+      <div class="left-content">
         
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Web Design Strategy" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
+        <h2 style="margin-top: 0;">Your website is your 24/7 Salesperson.</h2>
+        <p>
+          In today's digital age, a slow, outdated, or poorly designed website can cost you thousands of dollars in lost sales. Your online store represents your brand's credibility. If it doesn't look premium and load within seconds, customers will bounce.
+        </p>
+        <p>
+          <strong>Whether you need a simple landing page or a complex e-commerce store,</strong> we design with a purpose—to convert. We focus on clean UI/UX, fast loading speeds, and mobile responsiveness so you never lose a client due to technical issues.
+        </p>
 
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our Development Process</h2>
-        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+        <!-- Relevant Picture (UI/UX Design) -->
+        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop" alt="Professional Web Design UI/UX">
+
+        <h2>Why Your Web Design Matters</h2>
+        <p>Your website is often the first interaction a customer has with your brand. A professionally designed website builds trust instantly, while a poorly designed one drives potential customers straight to your competitors. We craft websites that look beautiful and function flawlessly.</p>
+
+        <h2>Our Development Process</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8; font-size: 1.05rem;">
           <li><strong>Discovery & Strategy:</strong> We learn about your business and goals.</li>
           <li><strong>UI/UX Design:</strong> We create wireframes and stunning visuals.</li>
           <li><strong>Development:</strong> We code it using the latest, fastest technologies.</li>
           <li><strong>Testing & Launch:</strong> We test on all devices before going live.</li>
         </ul>
 
-        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop" alt="UI UX Design" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
-
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Mobile-First & SEO Optimized</h2>
+        <h2>Mobile-First & SEO Optimized</h2>
         <p>Over 60% of web traffic comes from mobile phones. We design every website with a "Mobile-First" approach, ensuring it looks and works perfectly on smartphones. Plus, we build with clean code so Google loves your site as much as your customers do.</p>
-
-        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop" alt="Mobile Responsive Design" style="width: 100%; border-radius: 16px; margin: 20px 0; border: 1px solid var(--card-border);">
 
       </div>
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px; margin-bottom: 30px; position: sticky; top: 100px;">
+      <!-- RIGHT COLUMN: Form & Sidebar -->
+      <div class="right-sidebar">
+        
+        <!-- Technologies Box -->
+        <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
           <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">Technologies We Use</h3>
           <ul class="platform-list" style="list-style: none; padding: 0;">
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-wordpress" style="color: var(--primary); font-size: 1.5rem;"></i> WordPress & WooCommerce</li>
-            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Shopify</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Shopify Custom</li>
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-react" style="color: var(--primary); font-size: 1.5rem;"></i> React / Next.js</li>
             <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-brands fa-html5" style="color: var(--primary); font-size: 1.5rem;"></i> Custom HTML/CSS/JS</li>
           </ul>
-          <a href="https://wa.me/923234037697" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Chat on WhatsApp</a>
         </div>
+
+        <!-- Inquiry Form -->
+        <div class="web-form-box">
+          <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Tell Us Your Requirements</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Let us know what you are looking for, and we will get back to you with a custom plan.</p>
+
+          <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
+            <input type="hidden" name="_subject" value="New Web Design Inquiry!">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Your Name</label>
+            <input type="text" name="name" placeholder="John Doe" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Email / WhatsApp</label>
+            <input type="text" name="contact" placeholder="Email or Phone Number" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Website Type?</label>
+            <select name="website_type">
+              <option value="landing_page">Basic Landing Page</option>
+              <option value="business">Business Website</option>
+              <option value="ecommerce">E-Commerce Store</option>
+              <option value="custom">Custom Web App</option>
+              <option value="redesign">Redesign existing site</option>
+            </select>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Content Ready?</label>
+            <select name="content_ready">
+              <option value="yes">Yes, I have content</option>
+              <option value="no">No, need content writing</option>
+            </select>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Message / Vision</label>
+            <textarea name="message" rows="3" placeholder="I want a website for my real estate business..."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 5px;">Submit Inquiry <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+
       </div>
 
     </div>
@@ -197,7 +232,7 @@
     </div>
   </section>
 
-  <!-- FOOTER (Same as your other pages) -->
+  <!-- FOOTER -->
   <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
@@ -223,7 +258,6 @@
             <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
             <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
             <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none;">Support Ticket</a></li>
           </ul>
         </div>
 
