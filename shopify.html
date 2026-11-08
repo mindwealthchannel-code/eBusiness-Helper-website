@@ -29,6 +29,7 @@
       border-radius: 16px;
       margin: 25px 0;
       border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .right-sidebar {
@@ -76,6 +77,30 @@
       margin-bottom: 40px;
     }
 
+    /* Brand Logos Section */
+    .brand-logos-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: 0.3s;
+      padding: 40px 0;
+    }
+    
+    .brand-logos-container:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    .brand-logos-container img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
     @media (max-width: 992px) {
       .shopify-layout {
         grid-template-columns: 1fr;
@@ -116,8 +141,6 @@
   <!-- =========================================
        MAIN CONTENT
        ========================================= -->
-  
-  <!-- PAGE HEADER -->
   <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; position: relative; z-index: 10; text-align: center;">
     <div class="container">
       <h1 class="page-title">Shopify <span class="gradient-text">Store Development</span></h1>
@@ -141,7 +164,7 @@
 
         <!-- SEO vs ADS Section -->
         <div class="seo-box">
-          <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> Why Shopify + SEO is Crucial</h3>
+          <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> The Power of SEO & Organic Growth</h3>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
             Many people think running Facebook or Google Ads is enough. <strong>Here is the harsh truth:</strong> Ads only work as long as you keep paying. The moment you stop your ad budget, your sales drop.
           </p>
@@ -158,21 +181,30 @@
           Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.
         </p>
         
-        <!-- Relevant Image -->
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Store Setup">
+        <!-- NEW PROFESSIONAL IMAGE -->
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Shopify Store Setup & Analytics">
 
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our End-to-End Process</h2>
-        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 40px; margin-bottom: 15px;">Our End-to-End Process</h2>
+        <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 30px; line-height: 1.8;">
           <li><strong>Store Design & Setup:</strong> Visually stunning, mobile-friendly stores.</li>
           <li><strong>Theme Customization:</strong> Tailoring premium themes to match your brand.</li>
           <li><strong>Product Uploading:</strong> Adding products with SEO-optimized titles.</li>
           <li><strong>App Integration:</strong> Payment gateways, reviews, and email marketing.</li>
         </ul>
 
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Maximize Your Conversions</h2>
-        <p style="color: var(--text-muted); line-height: 1.8;">
-          Our team of Shopify experts creates user-friendly stores that drive conversions and maximize sales. We will help you unlock all the potential in Shopify to attain your e-commerce goals.
-        </p>
+        <!-- BRAND BUILDING SECTION (Jin brands ko banaya hai) -->
+        <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 16px; border: 1px solid var(--card-border); margin-top: 30px;">
+          <h3 style="color: #ffffff; font-size: 1.4rem; margin-bottom: 10px; font-weight: 700;">Brands We Have Built</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">From scratch to thriving e-commerce businesses. Here are some of the brands we've successfully launched on Shopify.</p>
+          
+          <div class="brand-logos-container">
+            <!-- Yahan aap apne clients ke logo lagayein. Filhal maine kuch example logos lagaye hain -->
+            <i class="fa-brands fa-shopify" style="font-size: 3rem; color: #96bf48;"></i>
+            <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">BRAND A</span>
+            <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">BRAND B</span>
+            <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: #f59e0b;"></i>
+          </div>
+        </div>
 
       </div>
 
@@ -183,10 +215,14 @@
         <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
           <h3 style="font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px;">What We Offer</h3>
           <ul class="platform-list" style="list-style: none; padding: 0;">
-            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.5rem;"></i> Custom Shopify Themes</li>
-            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-upload" style="color: var(--primary); font-size: 1.5rem;"></i> Bulk Product Uploading</li>
-            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary); font-size: 1.5rem;"></i> On-Page SEO Setup</li>
-            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-chart-line" style="color: var(--primary); font-size: 1.5rem;"></i> Conversion Rate Optimization</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-shopify" style="color: var(--primary); font-size: 1.2rem;"></i> Custom Shopify Themes</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-upload" style="color: var(--primary); font-size: 1.2rem;"></i> Bulk Product Uploading</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary); font-size: 1.2rem;"></i> On-Page SEO Setup</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-meta" style="color: var(--primary); font-size: 1.2rem;"></i> Meta Ads Management</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-google" style="color: var(--primary); font-size: 1.2rem;"></i> Google Ads Management</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-hashtag" style="color: var(--primary); font-size: 1.2rem;"></i> Social Media Handling</li>
+            <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-solid fa-store" style="color: var(--primary); font-size: 1.2rem;"></i> Overall Store Handling</li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-solid fa-headset" style="color: var(--primary); font-size: 1.2rem;"></i> Dedicated Customer Support</li>
           </ul>
         </div>
 
@@ -231,7 +267,7 @@
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
+  <!-- READY TO LAUNCH CTA -->
   <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Ready to launch your Shopify store?</h2>
