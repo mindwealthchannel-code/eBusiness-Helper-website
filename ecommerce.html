@@ -26,7 +26,34 @@
     .channel-image img { width: 100%; border-radius: 24px; border: 1px solid var(--card-border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); object-fit: cover; height: 400px; }
     
     .channel-title { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
-    .channel-icon { width: 65px; height: 65px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; }
+    
+    /* HOVER EFFECT LOGO STYLING */
+    .channel-icon { 
+      width: 65px; height: 65px; border-radius: 16px; 
+      display: flex; align-items: center; justify-content: center; 
+      font-size: 2.2rem; position: relative; overflow: hidden; 
+      transition: all 0.3s ease;
+    }
+    
+    .channel-icon .icon-default, 
+    .channel-icon .icon-hover {
+      position: absolute;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .channel-icon .icon-default { opacity: 1; transform: scale(1); }
+    .channel-icon .icon-hover { opacity: 0; transform: scale(0.5); }
+    
+    /* Jab row par hover ho toh logo change ho */
+    .channel-row:hover .channel-icon .icon-default { opacity: 0; transform: scale(0.5); }
+    .channel-row:hover .channel-icon .icon-hover { opacity: 1; transform: scale(1.1); }
+
+    /* Logo specific hover colors */
+    .channel-row:hover .ebay-logo { background: #ef4444; color: white; }
+    .channel-row:hover .etsy-logo { background: #f59e0b; color: white; }
+    .channel-row:hover .walmart-logo { background: #3b82f6; color: white; }
+    .channel-row:hover .brand-logo { background: #a855f7; color: white; }
+
     .channel-title h2 { font-size: 2.2rem; color: #ffffff; margin: 0; font-weight: 800; }
     
     .channel-desc { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; }
@@ -97,7 +124,11 @@
     <div class="channel-row">
       <div class="channel-text">
         <div class="channel-title">
-          <div class="channel-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;"><i class="fa-brands fa-ebay"></i></div>
+          <!-- Hover Icons -->
+          <div class="channel-icon ebay-logo" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+            <i class="fa-solid fa-shopping-bag icon-default"></i>
+            <i class="fa-brands fa-ebay icon-hover"></i>
+          </div>
           <h2>eBay Marketplace</h2>
         </div>
         <div class="stat-box">
@@ -130,7 +161,8 @@
         </div>
         
         <div>
-          <a href="contact.html" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/923234037697" target="_blank" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="channel-image">
@@ -142,8 +174,11 @@
     <div class="channel-row" style="flex-direction: row-reverse;">
       <div class="channel-text">
         <div class="channel-title">
-          <div class="channel-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;"><i class="fa-brands fa-etsy"></i></div>
-          <h2>Etsy & Handmade</h2>
+          <div class="channel-icon etsy-logo" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+            <i class="fa-solid fa-palette icon-default"></i>
+            <i class="fa-brands fa-etsy icon-hover"></i>
+          </div>
+          <h2>Etsy Marketplace</h2>
         </div>
         <div class="stat-box">
           <span>$13 Billion+</span>
@@ -174,7 +209,8 @@
         </div>
 
         <div>
-          <a href="contact.html" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/923234037697" target="_blank" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="channel-image">
@@ -186,7 +222,10 @@
     <div class="channel-row">
       <div class="channel-text">
         <div class="channel-title">
-          <div class="channel-icon" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="fa-solid fa-store"></i></div>
+          <div class="channel-icon walmart-logo" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+            <i class="fa-solid fa-shopping-cart icon-default"></i>
+            <i class="fa-solid fa-store icon-hover"></i>
+          </div>
           <h2>Walmart Marketplace</h2>
         </div>
         <div class="stat-box">
@@ -217,7 +256,8 @@
         </div>
 
         <div>
-          <a href="contact.html" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/923234037697" target="_blank" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="channel-image">
@@ -229,7 +269,10 @@
     <div class="channel-row" style="flex-direction: row-reverse;">
       <div class="channel-text">
         <div class="channel-title">
-          <div class="channel-icon" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="fa-solid fa-crown"></i></div>
+          <div class="channel-icon brand-logo" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">
+            <i class="fa-solid fa-shirt icon-default"></i>
+            <i class="fa-solid fa-crown icon-hover"></i>
+          </div>
           <h2>Vintage & Personal Brand</h2>
         </div>
         <p class="channel-desc">Build a brand that stands out. Whether you are sourcing unique vintage clothing or creating a premium personal brand on Shopify, we help you establish a unique identity, build a loyal following, and command higher prices.</p>
@@ -256,7 +299,8 @@
         </div>
 
         <div>
-          <a href="contact.html" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/923234037697" target="_blank" class="inquiry-btn">For Details & Discussion <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="channel-image">
