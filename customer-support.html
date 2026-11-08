@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customer Support — eBusiness Helper</title>
+  <title>Customer Support & Live Agents — eBusiness Helper</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,108 +13,174 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Support Page Specific Styles */
-    .support-hero {
-      padding-top: 180px;
-      padding-bottom: 40px;
-      text-align: center;
-    }
-
-    .support-grid {
+    /* Customer Support Layout */
+    .support-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
       gap: 50px;
+      align-items: start;
       padding-bottom: 80px;
       position: relative;
       z-index: 10;
     }
 
-    .support-info h3 {
+    .left-content h2 {
       color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 15px;
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
 
-    .support-info p {
+    .left-content p {
       color: var(--text-muted);
-      margin-bottom: 30px;
       font-size: 1.05rem;
-      line-height: 1.7;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
-    /* Contact Option Boxes */
-    .support-options {
-      display: flex;
-      flex-direction: column;
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-bottom: 40px;
+      margin: 30px 0;
     }
 
-    .support-option-box {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .feature-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       padding: 20px;
-      border-radius: 16px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.3s ease;
-    }
-
-    .support-option-box:hover {
-      border-color: var(--primary);
-      background: rgba(59, 130, 246, 0.05);
-      transform: translateX(5px);
-    }
-
-    .support-option-icon {
-      width: 50px;
-      height: 50px;
       border-radius: 12px;
-      background: rgba(59, 130, 246, 0.1);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
     }
 
-    .support-option-text h4 {
+    .feature-box i {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-box h4 {
+      color: white;
       font-size: 1.1rem;
       margin-bottom: 5px;
     }
 
-    .support-option-text p {
+    .feature-box p {
       color: var(--text-muted);
       font-size: 0.9rem;
-      margin: 0;
+      margin-bottom: 0;
+      line-height: 1.5;
     }
 
-    /* FAQ Mini */
-    .support-faq {
+    /* AI vs Human Box */
+    .ai-vs-human {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(0, 229, 160, 0.05));
+      border-left: 4px solid var(--primary);
+      padding: 25px;
+      border-radius: 0 16px 16px 0;
+      margin: 30px 0;
+    }
+
+    /* Right Sidebar Sticky */
+    .right-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    /* Form Box */
+    .support-form-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 25px;
+      border-radius: 24px;
+      padding: 35px;
+      backdrop-filter: blur(10px);
     }
-
-    .support-faq h4 {
-      font-size: 1.2rem;
+    
+    .support-form-box select, 
+    .support-form-box input, 
+    .support-form-box textarea {
+      width: 100%;
+      padding: 14px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: white;
+      font-family: inherit;
       margin-bottom: 15px;
-      color: var(--text);
+      font-size: 0.95rem;
+    }
+    
+    .support-form-box select:focus, 
+    .support-form-box input:focus, 
+    .support-form-box textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(0,0,0,0.4);
     }
 
-    .support-faq p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-      color: var(--text-muted);
+    /* Ticker Styling */
+    .data-ticker-section {
+      padding: 20px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 40px;
+    }
+
+    .ticker-wrapper {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 20px;
+      white-space: nowrap;
+      animation: scrollTicker 40s linear infinite;
+      padding-left: 20px;
+    }
+
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .ticker-item strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    @keyframes scrollTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 992px) {
-      .support-grid {
+      .support-layout {
+        grid-template-columns: 1fr;
+      }
+      .right-sidebar {
+        position: relative;
+        top: 0;
+      }
+      .features-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -145,168 +211,225 @@
   </header>
 
   <!-- PAGE HEADER -->
-  <section class="support-hero">
+  <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; text-align: center; position: relative; z-index: 10;">
     <div class="container">
-      <h1 class="page-title">We're Here to <span class="gradient-text">Help You</span></h1>
-      <p class="page-subtitle">Facing an issue? Need assistance? Our dedicated support team is available 24/7.</p>
+      <h1 class="page-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 15px;">Human <span class="gradient-text">Customer Support</span></h1>
+      <p class="page-subtitle" style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Scale your business with dedicated human agents. Real people, solving real problems, 24/7.</p>
+    </div>
+  </section>
+
+  <!-- LIVE TICKER -->
+  <section class="data-ticker-section">
+    <div style="text-align: center; margin-bottom: 15px;">
+      <p style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">The Demand for Human Support is Higher Than Ever</p>
+    </div>
+    
+    <div class="ticker-wrapper">
+      <div class="ticker-track">
+        
+        <div class="ticker-item">
+          <i class="fa-solid fa-headset" style="color: var(--primary); font-size: 1.2rem;"></i>
+          <span>73% of customers prefer <strong>Human Agents</strong> over AI for complex issues.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-robot" style="color: #ef4444; font-size: 1.2rem;"></i>
+          <span>AI Chatbots fail to resolve <strong>60% of queries</strong>, leading to lost sales.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-face-smile" style="color: var(--accent); font-size: 1.2rem;"></i>
+          <span>Brands with Human Support see a <strong>25% increase</strong> in customer retention.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-bolt" style="color: #f59e0b; font-size: 1.2rem;"></i>
+          <span>Fast human responses improve conversion rates by <strong>up to 30%</strong>.</span>
+        </div>
+
+        <!-- Duplicate for Loop -->
+        <div class="ticker-item">
+          <i class="fa-solid fa-headset" style="color: var(--primary); font-size: 1.2rem;"></i>
+          <span>73% of customers prefer <strong>Human Agents</strong> over AI for complex issues.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-robot" style="color: #ef4444; font-size: 1.2rem;"></i>
+          <span>AI Chatbots fail to resolve <strong>60% of queries</strong>, leading to lost sales.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-face-smile" style="color: var(--accent); font-size: 1.2rem;"></i>
+          <span>Brands with Human Support see a <strong>25% increase</strong> in customer retention.</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-bolt" style="color: #f59e0b; font-size: 1.2rem;"></i>
+          <span>Fast human responses improve conversion rates by <strong>up to 30%</strong>.</span>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- MAIN CONTENT -->
   <section class="container">
-    <div class="support-grid">
+    <div class="support-layout">
       
-      <!-- Left Side: Contact Options -->
-      <div class="support-info">
-        <h3>Get in touch instantly</h3>
-        <p>Choose the best way to reach us. Whether it's a quick question or a complex technical issue, we're just a click away.</p>
+      <!-- LEFT COLUMN -->
+      <div class="left-content">
         
-        <div class="support-options">
-          
-          <!-- WhatsApp -->
-          <a href="https://wa.me/923234037697" target="_blank" class="support-option-box">
-            <div class="support-option-icon" style="color: #25D366; background: rgba(37, 211, 102, 0.1);"><i class="fa-brands fa-whatsapp"></i></div>
-            <div class="support-option-text">
-              <h4>WhatsApp Support</h4>
-              <p>+92-323-4037-697 (Fastest Response)</p>
-            </div>
-          </a>
+        <h2 style="margin-top: 0;">Why Your Growing E-Commerce Brand Needs Human Agents</h2>
+        <p>
+          When your business scales, the volume of customer queries—returns, shipping delays, product questions—increases massively. You cannot handle this alone. However, shifting entirely to AI chatbots is a huge mistake.
+        </p>
 
-          <!-- Phone -->
-          <a href="tel:+923334855051" class="support-option-box">
-            <div class="support-option-icon"><i class="fa-solid fa-phone"></i></div>
-            <div class="support-option-text">
-              <h4>Call Us Directly</h4>
-              <p>+92-333-4855-051</p>
-            </div>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:hello@ebusinesshelper.com" class="support-option-box">
-            <div class="support-option-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="support-option-text">
-              <h4>Email Us</h4>
-              <p>hello@ebusinesshelper.com</p>
-            </div>
-          </a>
-
+        <div class="ai-vs-human">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;"><i class="fa-solid fa-robot"></i> AI vs. <i class="fa-solid fa-user-headset"></i> Human Agents</h3>
+          <p style="margin-bottom: 15px;">
+            AI is great for basic tasks, but <strong>customers hate talking to bots when they have a real issue.</strong> If a customer received a damaged item or wants a custom order, AI will give them a generic answer, leaving them frustrated.
+          </p>
+          <p>
+            We provide <strong>dedicated human agents</strong> who understand your brand, empathize with your customers, and resolve issues instantly. This builds immense trust and turns a frustrated buyer into a loyal, repeat customer.
+          </p>
         </div>
 
-        <!-- Quick FAQ -->
-        <div class="support-faq">
-          <h4><i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> Before you submit a ticket:</h4>
-          <p>• Please provide as much detail as possible about your issue.</p>
-          <p>• If it's a technical issue, screenshots are highly appreciated.</p>
-          <p>• Our average response time is under 2 hours.</p>
+        <h2>Our After-Sale Service Features</h2>
+        
+        <div class="features-grid">
+          <div class="feature-box">
+            <i class="fa-solid fa-comments"></i>
+            <h4>Live Chat Agents</h4>
+            <p>Real people answering your website visitors instantly.</p>
+          </div>
+          <div class="feature-box">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <h4>Email & Ticket Support</h4>
+            <p>Handling order queries, returns, and complaints.</p>
+          </div>
+          <div class="feature-box">
+            <i class="fa-solid fa-rotate-left"></i>
+            <h4>Returns Management</h4>
+            <p>Processing refunds and exchanges smoothly.</p>
+          </div>
+          <div class="feature-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Order Tracking</h4>
+            <p>Keeping customers updated on their shipment status.</p>
+          </div>
         </div>
+
+        <h2>We Also Offer AI Chat Support</h2>
+        <p>For high-volume, basic queries (like "Where is my order?"), we set up smart AI chatbots that work 24/7. But if the issue is complex, our AI instantly transfers the chat to a <strong>Human Agent</strong>. You get the best of both worlds: automation for speed, and humans for resolution.</p>
+
       </div>
 
-      <!-- Right Side: Ticket Form -->
-      <div class="glass-form" id="ticket-form" style="padding: 40px; border-radius: 24px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 25px;">Submit a Support Ticket</h3>
+      <!-- RIGHT COLUMN -->
+      <div class="right-sidebar" id="ticket-form">
         
-        <form>
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Full Name</label>
-            <input type="text" placeholder="John Doe" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-          </div>
+        <div class="support-form-box">
+          <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 10px;">Get an Agent for Your Store</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Fill out the form below and let us know your requirements.</p>
 
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Email Address</label>
-            <input type="email" placeholder="john@example.com" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-          </div>
+          <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
+            <input type="hidden" name="_subject" value="New Customer Support Inquiry!">
+            <input type="hidden" name="_captcha" value="false">
 
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">What service is this regarding?</label>
-            <select style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-              <option>General Inquiry</option>
-              <option>E-Commerce Support</option>
-              <option>Shopify Support</option>
-              <option>Amazon Support</option>
-              <option>Website Technical Issue</option>
-              <option>Marketing Support</option>
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Your Name</label>
+            <input type="text" name="name" placeholder="John Doe" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Email Address</label>
+            <input type="email" name="email" placeholder="john@example.com" required>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">What platform is your store on?</label>
+            <select name="platform">
+              <option value="shopify">Shopify</option>
+              <option value="amazon">Amazon</option>
+              <option value="woocommerce">WooCommerce</option>
+              <option value="custom">Custom Website</option>
             </select>
-          </div>
 
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Describe your issue</label>
-            <textarea placeholder="Please describe your issue in detail..." rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;"></textarea>
-          </div>
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Approx. daily support queries?</label>
+            <select name="volume">
+              <option value="under_50">Under 50 per day</option>
+              <option value="50_100">50 - 100 per day</option>
+              <option value="100_500">100 - 500 per day</option>
+              <option value="500_plus">500+ per day</option>
+            </select>
 
-          <button type="submit" class="btn btn-primary btn-block" style="padding: 14px; font-size: 1rem;">Submit Ticket <i class="fa-solid fa-paper-plane"></i></button>
-        </form>
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Do you want AI + Human agents?</label>
+            <select name="type">
+              <option value="both">Yes, I need both (Hybrid)</option>
+              <option value="human">Only Human Agents</option>
+            </select>
+
+            <label style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; display: block;">Additional Requirements</label>
+            <textarea name="message" rows="3" placeholder="I need agents for my growing Shopify store..."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem; margin-top: 5px;">Hire Agents Now <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+
+          <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--card-border); font-size: 0.85rem; color: var(--text-muted);">
+            <p><i class="fa-solid fa-shield-check" style="color: var(--accent);"></i> Your data is safe. We sign NDAs.</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </section>
 
-    <!-- PREMIUM FOOTER (FIXED ALIGNMENT) -->
-  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); margin-top: 60px;">
+  <!-- FOOTER -->
+  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
-      
-      <!-- Top Section: 4 Columns -->
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
         
-        <!-- Column 1: About Company + Copyright -->
+        <!-- Column 1 -->
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-          
           <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 15px;">
             <img src="logo.png" alt="eBusiness Helper Logo" style="height: 55px; width: auto; object-fit: contain;">
           </a>
-          
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
             We are a team of digital experts dedicated to propelling your business forward through e-commerce management, web development, and creative marketing.
           </p>
-
-          <!-- Copyright (Ab yeh text ke theek neeche hai, bina kisi extra gap ke) -->
           <p style="color: var(--text-muted); margin: 0; font-size: 0.8rem; opacity: 0.7;">
             &copy; 2026 eBusiness Helper. All Rights Reserved.
           </p>
-          
         </div>
 
-        <!-- Column 2: Quick Links -->
+        <!-- Column 2 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a></li>
-            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Support Ticket</a></li>
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
+            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
+            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none;">Support Ticket</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Our Services -->
+        <!-- Column 3 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">E-Commerce</a></li>
-            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Amazon FBA</a></li>
-            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Shopify Setup</a></li>
-            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Web Design</a></li>
-            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Marketing</a></li>
+            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none;">E-Commerce</a></li>
+            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none;">Amazon FBA</a></li>
+            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none;">Shopify Setup</a></li>
+            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none;">Web Design</a></li>
+            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none;">Marketing</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact Info + Social Icons -->
+        <!-- Column 4 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Get in Touch</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
               <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
-              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">hello@ebusinesshelper.com</a>
+              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;">hello@ebusinesshelper.com</a>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
-              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">+92-333-4855-051</a>
+              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;">+92-333-4855-051</a>
             </li>
           </ul>
 
@@ -322,12 +445,12 @@
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
-
         </div>
 
       </div>
     </div>
   </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
