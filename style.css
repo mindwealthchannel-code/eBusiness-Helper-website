@@ -507,11 +507,11 @@ section { padding: 80px 0; }
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 /* =========================================
-   FINAL MOBILE VIEW RESPONSIVE FIX
+   ULTIMATE MOBILE VIEW FIX (No More Scroll)
    ========================================= */
 @media (max-width: 768px) {
   
-  /* 1. Horizontal Scroll Khatam Karein */
+  /* 1. Sab se bara fix: Horizontal Scroll ko zabardasti band karein */
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -519,48 +519,45 @@ section { padding: 80px 0; }
     position: relative !important;
   }
 
-  /* 2. Background Glow Effects ko mobile par band karein (Yeh side scroll ki wajah thay) */
+  /* Background glows ko mobile pe band karein */
   .glow-bg {
     display: none !important; 
   }
 
-  /* 3. Containers ko screen ke andar rakhein */
+  /* 2. Containers ko screen ke andar rakhein */
   .container, section {
     padding-left: 15px !important;
     padding-right: 15px !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow-x: hidden !important;
   }
 
-  /* 4. Navbar aur Logo Setup */
+  /* 3. Navbar aur Hamburger Menu */
   .navbar {
     padding: 10px 0 !important;
   }
   
   .nav-container {
-    padding: 10px 20px !important; /* Menu ko andar laane ke liye padding barhai */
+    padding: 10px 15px !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    width: 100% !important;
   }
 
   .navbar .logo img {
-    max-width: 150px !important; /* Logo screen se bahar nahi jayega */
+    max-width: 140px !important;
     height: auto !important;
-    max-height: 45px !important;
     object-fit: contain !important;
   }
   
-  /* 5. Hamburger Menu (Mobile Menu Button) */
   .hamburger {
     display: block !important;
     font-size: 1.8rem !important;
     color: white !important;
     cursor: pointer !important;
-    padding: 5px !important;
-    margin-right: 5px !important; /* Menu screen ke kinare se andar aayega */
+    margin-right: 0 !important; /* Right side se gap khatam */
   }
   
   .nav-links {
@@ -572,7 +569,6 @@ section { padding: 80px 0; }
     right: 0 !important;
     background: var(--bg-2) !important;
     padding: 20px !important;
-    gap: 15px !important;
     border-bottom: 1px solid var(--card-border) !important;
     z-index: 1000 !important;
   }
@@ -580,78 +576,61 @@ section { padding: 80px 0; }
   .nav-links.active {
     display: flex !important;
   }
-  
-  .nav-links a {
-    font-size: 1.1rem !important;
-    padding: 10px 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-  }
 
-  /* 6. Home Page (Hero Section) */
+  /* 4. Home Page Cards */
   .rail-heading h1 {
     font-size: 1.8rem !important;
     text-align: center !important;
-    padding: 0 10px !important;
     word-wrap: break-word !important;
-  }
-  
-  .rail-heading p {
-    text-align: center !important;
-    font-size: 0.95rem !important;
-  }
-
-  .rail-container {
-    padding: 0 !important;
-    overflow: visible !important;
   }
   
   .rail-cards-wrapper {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 15px !important;
     width: 100% !important;
-    flex-wrap: wrap !important;
   }
 
   .rail-card {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 300px !important;
     margin: 0 auto !important;
     padding: 20px !important;
     height: auto !important;
-    min-height: 80px !important;
     flex-direction: row !important;
     justify-content: center !important;
-    transform: none !important;
-  }
-  
-  .hanger, .rail-line {
-    display: none !important;
-  }
-  
-  .card-title {
-    writing-mode: horizontal-tb !important;
-    transform: none !important;
-    font-size: 1.1rem !important;
-    margin: 0 !important;
-  }
-  
-  .card-details {
-    display: none !important;
-  }
-  
-  .rail-card.active {
-    width: 100% !important;
-    max-width: 320px !important;
-    padding: 20px !important;
-  }
-  
-  .rail-card.active .card-details {
-    display: block !important;
-    margin-top: 10px !important;
   }
 
-  /* 7. Baaki Saare Pages (Shopify, About, Amazon, Web Design, etc.) ka Layout */
+  /* 5. Footer Ka Asal Masla (Address Wali Line) */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 30px !important;
+    width: 100% !important;
+  }
+  
+  .footer-grid > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Address ko next line pe bhejein taake screen na phaile */
+  .footer ul li span, .footer ul li a {
+    white-space: normal !important; 
+    word-break: break-word !important;
+    text-align: center !important;
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  .footer ul li {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* 6. Baaki Saare 2-Column Pages (Shopify, Amazon, About, etc.) */
   .shopify-layout, 
   .web-layout, 
   .support-layout, 
@@ -663,62 +642,29 @@ section { padding: 80px 0; }
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 30px !important;
-    padding: 0 !important;
-  }
-  
-  .channel-row {
-    flex-direction: column !important; /* Zig zag layout ko mobile pe column karein */
+    gap: 20px !important;
   }
 
-  /* 8. Sidebars aur Forms ko full width karein */
   .right-sidebar, .sidebar {
     width: 100% !important;
     position: relative !important;
     top: 0 !important;
-    margin-top: 20px !important;
-  }
-  
-  .shopify-form-box, .support-form-box, .marketing-form-box, .calculator-box, .web-form-box {
-    padding: 20px !important;
   }
 
-  /* 9. Grids (Services, Business Models, Features) ko ek column karein */
+  /* 7. Grids (Services etc.) */
   .pro-services-grid, 
   .bento-grid, 
   .models-grid,
   .features-grid,
-  .stats-grid,
   .services-grid,
   .contact-cards-grid {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 20px !important;
   }
 
-  /* 10. Images */
   img {
     max-width: 100% !important;
     height: auto !important;
-  }
-
-  /* 11. Footer ka Layout */
-  .footer-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 40px !important;
-  }
-  
-  .footer-grid > div {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  .footer-content {
-    flex-direction: column !important;
-    text-align: center !important;
   }
 }
