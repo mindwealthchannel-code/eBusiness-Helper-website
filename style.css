@@ -525,7 +525,7 @@ section { padding: 80px 0; }
   }
 
   /* 3. Containers ko screen ke andar rakhein */
-  .container, .nav-container, section {
+  .container, section {
     padding-left: 15px !important;
     padding-right: 15px !important;
     width: 100% !important;
@@ -538,6 +538,14 @@ section { padding: 80px 0; }
   .navbar {
     padding: 10px 0 !important;
   }
+  
+  .nav-container {
+    padding: 10px 20px !important; /* Menu ko andar laane ke liye padding barhai */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
   .navbar .logo img {
     max-width: 150px !important; /* Logo screen se bahar nahi jayega */
     height: auto !important;
@@ -548,10 +556,11 @@ section { padding: 80px 0; }
   /* 5. Hamburger Menu (Mobile Menu Button) */
   .hamburger {
     display: block !important;
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
     color: white !important;
     cursor: pointer !important;
-    margin-left: 10px !important;
+    padding: 5px !important;
+    margin-right: 5px !important; /* Menu screen ke kinare se andar aayega */
   }
   
   .nav-links {
