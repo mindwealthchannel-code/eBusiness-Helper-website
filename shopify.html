@@ -18,7 +18,7 @@
        ========================================= */
     .shopify-layout {
       display: grid;
-      grid-template-columns: 1.8fr 1fr; /* Left side bada, Right side chota */
+      grid-template-columns: 1.8fr 1fr; /* Desktop */
       gap: 50px;
       align-items: start;
       padding-bottom: 60px;
@@ -27,10 +27,9 @@
     }
 
     .left-content {
-      min-width: 0; /* Grid ko tootne se bachata hai */
+      min-width: 0; 
     }
 
-    /* Image ko perfect size dene ke liye */
     .left-content img {
       width: 100%;
       max-width: 100%;
@@ -153,17 +152,71 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Mobile */
-    @media (max-width: 992px) {
+    /* =========================================
+       MOBILE FIX (Yeh sabse important hai)
+       ========================================= */
+    @media (max-width: 768px) {
       .shopify-layout {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
       }
+
+      .left-content, 
       .right-sidebar {
-        position: relative;
-        top: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        top: 0 !important;
+        padding: 0 !important;
       }
+
       .shopify-form-box {
-        padding: 30px;
+        padding: 25px !important;
+      }
+
+      .seo-box {
+        padding: 20px !important;
+        margin-left: 0 !important;
+      }
+
+      /* Form ke grid ko single column karein */
+      .shopify-form-box form > div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+      }
+
+      /* Footer Fix */
+      .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        width: 100% !important;
+        gap: 40px !important;
+      }
+      .footer-grid > div {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .footer ul li {
+        justify-content: center !important;
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+      }
+      .footer ul li span, 
+      .footer ul li a {
+        white-space: normal !important;
+        text-align: center !important;
+        word-break: break-word !important;
+      }
+      .footer ul li i {
+        margin-right: 0 !important;
+        margin-bottom: 8px !important;
       }
     }
   </style>
@@ -195,7 +248,7 @@
   <!-- PAGE HEADER -->
   <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; position: relative; z-index: 10; text-align: center;">
     <div class="container">
-      <h1 class="page-title" style="font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; margin-bottom: 15px;">Shopify <span class="gradient-text">Store Development</span></h1>
+      <h1 class="page-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 15px;">Shopify <span class="gradient-text">Store Development</span></h1>
       <p class="page-subtitle" style="color: var(--text-muted); max-width: 700px; margin: 10px auto 0 auto;">Launch, customize, and scale your online store with our expert Shopify solutions.</p>
     </div>
   </section>
@@ -216,11 +269,11 @@
 
         <!-- SEO Box -->
         <div class="seo-box">
-          <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> The Power of SEO & Organic Growth</h3>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
+          <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> The Power of SEO & Organic Growth</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 15px;">
             Many people think running Facebook or Google Ads is enough. <strong>Here is the harsh truth:</strong> Ads only work as long as you keep paying. The moment you stop your ad budget, your sales drop.
           </p>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 15px;">
             <strong>SEO (Search Engine Optimization)</strong> is different. Google's algorithm ranks websites based on relevance, user experience, and content. When you invest in SEO, your website appears organically when people search for your products. This builds a <strong>permanent online presence</strong> and long-term brand trust.
           </p>
           <p style="color: var(--accent); font-weight: 600; margin: 0;">
@@ -319,7 +372,8 @@
           <input type="hidden" name="_subject" value="New Shopify Project Inquiry!">
           <input type="hidden" name="_captcha" value="false">
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <!-- Form fields wrapped in a div for mobile CSS -->
+          <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div>
               <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Name</label>
               <input type="text" name="name" placeholder="John Doe" required>
@@ -330,7 +384,7 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div>
               <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Business Stage?</label>
               <select name="stage">
@@ -368,7 +422,7 @@
     </div>
   </section>
 
-    <!-- =========================================
+  <!-- =========================================
        FOOTER (FULL WITH SOCIAL ICONS)
        ========================================= -->
   <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
@@ -418,7 +472,7 @@
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
-              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
+              <span>50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
             </li>
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
@@ -458,7 +512,7 @@
       });
     }
   </script>
-    <!-- Vercel Web Analytics -->
+  <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
