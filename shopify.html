@@ -13,10 +13,12 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    /* Custom Layout for Shopify Page */
+    /* =========================================
+       SHOPIFY PAGE LAYOUT
+       ========================================= */
     .shopify-layout {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1.8fr 1fr; /* Left side bada, Right side chota */
       gap: 50px;
       align-items: start;
       padding-bottom: 60px;
@@ -24,12 +26,21 @@
       z-index: 10;
     }
 
+    .left-content {
+      min-width: 0; /* Grid ko tootne se bachata hai */
+    }
+
+    /* Image ko perfect size dene ke liye */
     .left-content img {
       width: 100%;
+      max-width: 100%;
+      height: 350px;
+      object-fit: cover;
       border-radius: 16px;
       margin: 25px 0;
       border: 1px solid var(--card-border);
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: block;
     }
 
     .right-sidebar {
@@ -37,7 +48,18 @@
       top: 100px;
     }
 
-    /* Full Width Form Section */
+    /* SEO Info Box */
+    .seo-box {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(0, 229, 160, 0.05));
+      border-left: 4px solid var(--primary);
+      padding: 30px;
+      border-radius: 0 16px 16px 0;
+      margin-bottom: 40px;
+    }
+
+    /* =========================================
+       FULL WIDTH FORM SECTION
+       ========================================= */
     .full-width-form-section {
       background: var(--bg-2);
       border-top: 1px solid var(--card-border);
@@ -79,23 +101,19 @@
       background: rgba(0,0,0,0.4);
     }
 
-    .seo-box {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(0, 229, 160, 0.05));
-      border-left: 4px solid var(--primary);
-      padding: 30px;
-      border-radius: 0 16px 16px 0;
-      margin-bottom: 40px;
-    }
-
-    /* Brand Ticker Styles */
+    /* =========================================
+       BRAND TICKER
+       ========================================= */
     .brand-ticker-section {
-      padding: 40px 0;
+      padding: 30px 0;
       background: var(--bg);
       border-top: 1px solid var(--card-border);
       border-bottom: 1px solid var(--card-border);
       overflow: hidden;
       position: relative;
       z-index: 10;
+      margin-bottom: 40px;
+      border-radius: 16px;
     }
 
     .ticker-wrapper {
@@ -135,6 +153,7 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* Mobile */
     @media (max-width: 992px) {
       .shopify-layout {
         grid-template-columns: 1fr;
@@ -154,9 +173,7 @@
   <div class="glow-bg glow-1"></div>
   <div class="glow-bg glow-2"></div>
 
-  <!-- =========================================
-       HEADER / NAVBAR
-       ========================================= -->
+  <!-- HEADER -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
@@ -175,9 +192,7 @@
     </div>
   </header>
 
-  <!-- =========================================
-       MAIN CONTENT
-       ========================================= -->
+  <!-- PAGE HEADER -->
   <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; position: relative; z-index: 10; text-align: center;">
     <div class="container">
       <h1 class="page-title">Shopify <span class="gradient-text">Store Development</span></h1>
@@ -185,11 +200,11 @@
     </div>
   </section>
 
-  <!-- 2 COLUMN LAYOUT -->
+  <!-- MAIN LAYOUT -->
   <section class="container">
     <div class="shopify-layout">
       
-      <!-- LEFT COLUMN: Text & Info -->
+      <!-- LEFT SIDE -->
       <div class="left-content">
         
         <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: #ffffff;">
@@ -199,7 +214,7 @@
           Shopify powers millions of businesses worldwide. However, setting it up correctly from day one is crucial. A poorly configured store can lead to abandoned carts and lost revenue.
         </p>
 
-        <!-- SEO vs ADS Section -->
+        <!-- SEO Box -->
         <div class="seo-box">
           <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> The Power of SEO & Organic Growth</h3>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 15px;">
@@ -213,16 +228,15 @@
           </p>
         </div>
 
-        <!-- FAMOUS BRANDS TICKER (Yahan Add Kiya Hai) -->
-        <div class="brand-ticker-section" style="margin-bottom: 40px; border-radius: 16px;">
-          <div style="text-align: center; margin-bottom: 20px;">
+        <!-- TICKER -->
+        <div class="brand-ticker-section">
+          <div style="text-align: center; margin-bottom: 15px;">
             <p style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Trusted by Industry Leaders & Top Shopify Brands</p>
           </div>
           
           <div class="ticker-wrapper">
             <div class="ticker-track">
               
-              <!-- Brand Items -->
               <div class="brand-item"><i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark</div>
               <div class="brand-item"><i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova</div>
               <div class="brand-item"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS</div>
@@ -231,7 +245,7 @@
               <div class="brand-item"><i class="fa-solid fa-bolt" style="color: #ef4444;"></i> Red Bull</div>
               <div class="brand-item"><i class="fa-solid fa-car" style="color: #64748b;"></i> Tesla</div>
 
-              <!-- Duplicate for Loop -->
+              <!-- Loop -->
               <div class="brand-item"><i class="fa-solid fa-dumbbell" style="color: #3b82f6;"></i> Gymshark</div>
               <div class="brand-item"><i class="fa-solid fa-shirt" style="color: #ec4899;"></i> Fashion Nova</div>
               <div class="brand-item"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> SKIMS</div>
@@ -250,10 +264,10 @@
           Our Shopify services are an all-around solution. From designing and developing custom stores to optimizing product pages, managing inventory, and implementing marketing strategies, we’re here to bring you end-to-end support.
         </p>
         
-        <!-- Relevant Image -->
+        <!-- FIXED IMAGE -->
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Shopify Store Setup & Analytics">
 
-        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 40px; margin-bottom: 15px;">Our End-to-End Process</h2>
+        <h2 style="color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px;">Our End-to-End Process</h2>
         <ul style="color: var(--text-muted); margin-left: 20px; margin-bottom: 30px; line-height: 1.8;">
           <li><strong>Store Design & Setup:</strong> Visually stunning, mobile-friendly stores.</li>
           <li><strong>Theme Customization:</strong> Tailoring premium themes to match your brand.</li>
@@ -268,7 +282,7 @@
 
       </div>
 
-      <!-- RIGHT COLUMN: Sidebar (Only What We Offer) -->
+      <!-- RIGHT SIDE (Sidebar) -->
       <div class="right-sidebar">
         
         <div class="platform-box glass-panel" style="padding: 30px; border-radius: 24px;">
@@ -291,9 +305,7 @@
     </div>
   </section>
 
-  <!-- =========================================
-       FULL WIDTH FORM SECTION (Bottom)
-       ========================================= -->
+  <!-- FORM SECTION -->
   <section class="full-width-form-section">
     <div class="container">
       <div class="shopify-form-box">
@@ -347,7 +359,7 @@
     </div>
   </section>
 
-  <!-- READY TO LAUNCH CTA -->
+  <!-- CTA SECTION -->
   <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Ready to launch your Shopify store?</h2>
@@ -356,9 +368,7 @@
     </div>
   </section>
 
-  <!-- =========================================
-       FOOTER
-       ========================================= -->
+  <!-- FOOTER -->
   <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
@@ -380,11 +390,10 @@
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a></li>
-            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Support Ticket</a></li>
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
+            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
           </ul>
         </div>
 
@@ -392,11 +401,10 @@
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">E-Commerce</a></li>
-            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Amazon FBA</a></li>
-            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Shopify Setup</a></li>
-            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Web Design</a></li>
-            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Marketing</a></li>
+            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none;">E-Commerce</a></li>
+            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none;">Amazon FBA</a></li>
+            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none;">Shopify Setup</a></li>
+            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none;">Web Design</a></li>
           </ul>
         </div>
 
@@ -406,39 +414,18 @@
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
-              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
+              <span style="white-space: nowrap;">50 Canal Bank Housing Society, Lahore</span>
             </li>
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
-              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">hello@ebusinesshelper.com</a>
-            </li>
-            <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
-              <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
-              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">+92-333-4855-051</a>
+              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;">hello@ebusinesshelper.com</a>
             </li>
           </ul>
-
-          <!-- Social Icons -->
-          <div style="display: flex; gap: 12px;">
-            <a href="https://www.facebook.com/eBusinessHelper/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#1877F2'; this.style.borderColor='#1877F2'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/ebusinesshelperofficial/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#d6249f'; this.style.borderColor='#d6249f'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/923234037697" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: white; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.background='#25D366'; this.style.borderColor='#25D366'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--card-border)'">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-          </div>
         </div>
-
       </div>
     </div>
   </footer>
 
-  <!-- =========================================
-       JAVASCRIPT
-       ========================================= -->
   <script src="script.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');
