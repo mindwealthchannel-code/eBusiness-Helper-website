@@ -10,6 +10,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    /* Custom CSS for Form */
+    .web-form-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+    }
+    .web-form-box select, .web-form-box input, .web-form-box textarea {
+      width: 100%;
+      padding: 14px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: white;
+      font-family: inherit;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .web-form-box select:focus, .web-form-box input:focus, .web-form-box textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
 <body>
 
@@ -24,90 +52,94 @@
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-right">
-        <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
         <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
       </div>
     </div>
   </header>
 
-    <!-- PAGE HEADER -->
-  <section class="page-header" style="padding-top: 160px; padding-bottom: 20px;">
+  <!-- PAGE HEADER -->
+  <section class="page-header" style="padding-top: 160px; padding-bottom: 40px; text-align: center; position: relative; z-index: 10;">
     <div class="container">
-      <h1 class="page-title">High-Converting <span class="gradient-text">Web Design</span></h1>
-      <p class="page-subtitle">We don't just build websites; we build digital storefronts that turn visitors into loyal customers.</p>
+      <h1 class="page-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 15px;">High-Converting <span class="gradient-text">Web Design</span></h1>
+      <p class="page-subtitle" style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">We don't just build websites; we build digital storefronts that turn visitors into loyal customers.</p>
     </div>
   </section>
 
-  <!-- PROFESSIONAL INTRO TEXT -->
+  <!-- INTRO TEXT -->
   <section class="calc-intro-text" style="padding: 40px 0 10px;">
     <div class="container" style="max-width: 850px; margin: 0 auto; text-align: center;">
-      
       <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.3;">
         Your website is your <span class="gradient-text">24/7 Salesperson.</span>
       </h2>
-      
       <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
         In today's digital age, a slow, outdated, or poorly designed website can cost you thousands of dollars in lost sales. Your online store represents your brand's credibility. If it doesn't look premium and load within seconds, customers will bounce.
       </p>
-      
       <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
         <strong>Whether you need a simple landing page or a complex e-commerce store,</strong> we design with a purpose—to convert. We focus on clean UI/UX, fast loading speeds, and mobile responsiveness so you never lose a client due to technical issues.
       </p>
-
     </div>
   </section>
 
-  <!-- ⚡ WEBSITE COST ESTIMATOR (Calculator) -->
+  <!-- ⚡ PROJECT INQUIRY FORM (Replaced Calculator) -->
   <section class="calculator-section" style="padding: 40px 0 60px;">
     <div class="container">
-      <div class="calculator-box glass-panel" style="max-width: 800px; margin: 0 auto; padding: 40px; border-radius: 24px;">
+      <div class="web-form-box" style="max-width: 800px; margin: 0 auto;">
         
         <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Website Cost Estimator</h2>
-          <p style="color: var(--text-muted);">Get a rough estimate for your project instantly.</p>
+          <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">Tell Us Your Requirements</h2>
+          <p style="color: var(--text-muted);">Let us know what you are looking for, and we will get back to you with a custom plan.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr; gap: 20px; text-align: left; margin-bottom: 30px;">
-          
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">What type of website do you need?</label>
-            <select id="webType" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-              <option value="500">Basic Landing Page ($500+)</option>
-              <option value="1200">Business Website ($1,200+)</option>
-              <option value="2500">E-Commerce Store ($2,500+)</option>
-              <option value="4000">Custom Web App ($4,000+)</option>
-            </select>
+        <form action="https://formsubmit.co/hello@ebusinesshelper.com" method="POST">
+          <!-- FormSubmit settings -->
+          <input type="hidden" name="_subject" value="New Website Design Inquiry!">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required>
+            </div>
+            <div>
+              <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Email / WhatsApp</label>
+              <input type="text" name="contact" placeholder="Email or Phone Number" required>
+            </div>
           </div>
 
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Do you need Content Writing?</label>
-            <select id="webContent" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-              <option value="0">No, I have my own content</option>
-              <option value="300">Yes, basic copywriting (+$300)</option>
-            </select>
-          </div>
+          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">What type of website do you need?</label>
+          <select name="website_type">
+            <option value="landing_page">Basic Landing Page (1-3 Pages)</option>
+            <option value="business">Business Website (Corporate/Portfolio)</option>
+            <option value="ecommerce">E-Commerce Store (Shopify/WooCommerce)</option>
+            <option value="custom">Custom Web App (React/Next.js)</option>
+            <option value="redesign">Redesign existing website</option>
+          </select>
 
-          <div class="input-group">
-            <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; display: block;">Do you need Logo & Branding?</label>
-            <select id="webBrand" onchange="calcWebCost()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 8px; color: white; font-family: inherit;">
-              <option value="0">No, I have a logo</option>
-              <option value="200">Yes, I need a logo (+$200)</option>
-            </select>
-          </div>
+          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you have your content ready?</label>
+          <select name="content_ready">
+            <option value="yes">Yes, I have text and images ready</option>
+            <option value="no">No, I need content writing and design</option>
+            <option value="partial">I have some content, need help with the rest</option>
+          </select>
 
-        </div>
+          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Do you have a Logo and Branding?</label>
+          <select name="branding">
+            <option value="yes">Yes, I have a logo and brand colors</option>
+            <option value="no">No, I need a logo and branding as well</option>
+          </select>
 
-        <div class="calc-result" style="text-align: center; background: rgba(59, 130, 246, 0.1); padding: 20px; border-radius: 15px; border: 1px solid var(--primary);">
-          <h3 style="color: white; font-size: 1.1rem; margin-bottom: 5px;">Estimated Starting Cost:</h3>
-          <span id="webCostDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">$500.00</span>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 10px;">*This is a rough estimate. Contact us for an exact quote.</p>
-          <a href="#contact" class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px;">Get Exact Quote</a>
-        </div>
+          <label style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; display: block;">Tell us about your demand/vision</label>
+          <textarea name="message" rows="4" placeholder="I want a website for my real estate business..."></textarea>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Requirements <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+
       </div>
     </div>
   </section>
@@ -149,7 +181,7 @@
             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-muted);"><i class="fa-brands fa-react" style="color: var(--primary); font-size: 1.5rem;"></i> React / Next.js</li>
             <li style="display: flex; align-items: center; gap: 15px; color: var(--text-muted);"><i class="fa-brands fa-html5" style="color: var(--primary); font-size: 1.5rem;"></i> Custom HTML/CSS/JS</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Discuss Your Project</a>
+          <a href="https://wa.me/923234037697" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Chat on WhatsApp</a>
         </div>
       </div>
 
@@ -157,81 +189,71 @@
   </section>
 
   <!-- CONTACT CTA -->
-  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border);">
+  <section class="contact" id="contact" style="padding-top: 60px; padding-bottom: 80px; background: var(--bg-2); border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container text-center">
       <h2 class="section-title">Ready to build your dream website?</h2>
       <p style="color: var(--text-muted); margin-bottom: 30px;">Let's discuss your vision and create something amazing together.</p>
-      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Contact Us Today <i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:hello@ebusinesshelper.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Email Us Today <i class="fa-solid fa-envelope"></i></a>
     </div>
   </section>
 
-      <!-- PREMIUM FOOTER (FIXED ALIGNMENT) -->
-  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); margin-top: 60px;">
+  <!-- FOOTER (Same as your other pages) -->
+  <footer class="footer" style="background: #050914; padding: 60px 0 40px 0; border-top: 1px solid var(--card-border); position: relative; z-index: 10;">
     <div class="container">
-      
-      <!-- Top Section: 4 Columns -->
       <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr; gap: 30px; align-items: start;">
         
-        <!-- Column 1: About Company + Copyright -->
+        <!-- Column 1 -->
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-          
           <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 15px;">
             <img src="logo.png" alt="eBusiness Helper Logo" style="height: 55px; width: auto; object-fit: contain;">
           </a>
-          
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
             We are a team of digital experts dedicated to propelling your business forward through e-commerce management, web development, and creative marketing.
           </p>
-
-          <!-- Copyright (Ab yeh text ke theek neeche hai, bina kisi extra gap ke) -->
           <p style="color: var(--text-muted); margin: 0; font-size: 0.8rem; opacity: 0.7;">
             &copy; 2026 eBusiness Helper. All Rights Reserved.
           </p>
-          
         </div>
 
-        <!-- Column 2: Quick Links -->
+        <!-- Column 2 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Services</a></li>
-            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
-            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
-            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Support Ticket</a></li>
+            <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+            <li><a href="services.html" style="color: var(--text-muted); text-decoration: none;">Services</a></li>
+            <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a></li>
+            <li><a href="customer-support.html" style="color: var(--text-muted); text-decoration: none;">Support Ticket</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Our Services -->
+        <!-- Column 3 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Our Services</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">E-Commerce</a></li>
-            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Amazon FBA</a></li>
-            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Shopify Setup</a></li>
-            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Web Design</a></li>
-            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">Marketing</a></li>
+            <li><a href="ecommerce.html" style="color: var(--text-muted); text-decoration: none;">E-Commerce</a></li>
+            <li><a href="amazon.html" style="color: var(--text-muted); text-decoration: none;">Amazon FBA</a></li>
+            <li><a href="shopify.html" style="color: var(--text-muted); text-decoration: none;">Shopify Setup</a></li>
+            <li><a href="web-design.html" style="color: var(--text-muted); text-decoration: none;">Web Design</a></li>
+            <li><a href="marketing.html" style="color: var(--text-muted); text-decoration: none;">Marketing</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact Info + Social Icons -->
+        <!-- Column 4 -->
         <div>
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600;">Get in Touch</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.9rem; align-items: flex-start;">
               <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i>
               <span style="white-space: nowrap;">50 Canal Bank Housing Society, Fateh Garh, Lahore</span>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
-              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">hello@ebusinesshelper.com</a>
+              <a href="mailto:hello@ebusinesshelper.com" style="color: var(--text-muted); text-decoration: none;">hello@ebusinesshelper.com</a>
             </li>
-            
             <li style="display: flex; gap: 12px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
               <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
-              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">+92-333-4855-051</a>
+              <a href="tel:+923334855051" style="color: var(--text-muted); text-decoration: none;">+92-333-4855-051</a>
             </li>
           </ul>
 
@@ -247,28 +269,14 @@
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
-
         </div>
 
       </div>
     </div>
   </footer>
-  <!-- JavaScript for Calculator & Menu -->
+
+  <!-- JavaScript -->
   <script>
-    function calcWebCost() {
-      const baseCost = parseFloat(document.getElementById('webType').value);
-      const contentCost = parseFloat(document.getElementById('webContent').value);
-      const brandCost = parseFloat(document.getElementById('webBrand').value);
-      
-      const total = baseCost + contentCost + brandCost;
-      document.getElementById('webCostDisplay').innerText = `$${total.toFixed(2)}`;
-    }
-
-    // Initial Calculation on load
-    window.onload = function() {
-      calcWebCost();
-    };
-
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if (hamburger) {
