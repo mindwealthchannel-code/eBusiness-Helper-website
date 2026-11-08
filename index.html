@@ -490,5 +490,21 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Scroll Fix Script -->
+<script>
+  // Agar koi element screen se bahar nikal raha hai to usay hide kar dein
+  document.addEventListener("DOMContentLoaded", function() {
+    const bodyWidth = document.body.clientWidth;
+    const allElements = document.querySelectorAll('*');
+    
+    allElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // Agar element screen ke right side se bahar ja raha hai
+      if (rect.right > bodyWidth + 5) { 
+        el.style.display = 'none'; // Usay chupa dein
+      }
+    });
+  });
+</script>
 </body>
 </html>
